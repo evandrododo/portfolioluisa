@@ -1,20 +1,29 @@
-import { useState } from 'react'
-import './App.css'
-import Section from './Section'
+import "./App.css";
+import Filter from "./components/Filter";
+import PagesMenu from "./components/PagesMenu";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="Portfolio">
+    <>
       <div className="topbar">
-        <img src="/luisalogo.svg" className="logo" alt="Luisa Kuhn" />
+        <PagesMenu />
+        <Filter />
       </div>
-      <Section color="#EBEBFF" title="Luisa Kuhn" />
-      <Section color="#FDEDFD" title="projects" />
-      <Section color="#FFFFEB" title="about" link="#about" />
-    </div>
-  )
+      <div className="fixed-background">
+        <div className="line artist">
+          <div>Artist</div>
+          <div>&</div>
+        </div>
+        <div className="line designer">
+          <div>Designer</div>
+        </div>
+        <div className="line contact">
+          <div>contact</div>
+          <img src="circleright.svg" alt="circle right" />
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;

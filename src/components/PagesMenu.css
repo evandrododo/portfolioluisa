@@ -1,0 +1,31 @@
+.group-pages {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.pages a {
+  font-weight: 600;
+  font-size: 1em;
+  display: inline-block;
+  padding: 0.5em 0.3em;
+  margin: 0 0.8em;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  text-decoration: underline;
+  color: #333;
+  align-self: flex-start;
+}
+
+
+.logo {
+  height: 3em;
+  padding: 2em 2em 2em 0;
+  will-change: filter;
+  transition: filter 299ms;
+}
+.logo:hover {
+  filter: drop-shadow(-1 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(-1 0 2em #61dafbaa);
+}

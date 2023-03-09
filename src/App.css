@@ -1,49 +1,65 @@
 #root {
-  width: 100vw;
   height: 100vh;
   margin: 0 0;
   text-align: center;
 }
-.top-bar {
+
+.topbar {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  padding: 1em 2em;
-  background-color: #002200;
-  color: #f9f9f9;
-}
-.logo {
-  height: 3em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  width: 100%;
+  padding: 0 3em;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 0px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;  
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fixed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: 6em;
+  font-weight: 600;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.fixed-background .line {
+  width: 5.6em;
+  height: 1em;
 }
-
-.card {
-  padding: 2em;
+.line div {
+  line-height: 1em;
 }
-
-.read-the-docs {
-  color: #888;
+.line.artist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.line.designer div{
+letter-spacing: 0.12em;
+}
+.line.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.line.contact:hover {
+  background-color: magenta;
+}
+.line.contact img {
+  width: 0.6em;
 }
