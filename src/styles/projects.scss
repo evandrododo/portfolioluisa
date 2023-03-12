@@ -1,0 +1,10 @@
+.projects-list {
+  margin-top: 70vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none; 
+}

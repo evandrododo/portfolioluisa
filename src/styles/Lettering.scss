@@ -1,0 +1,50 @@
+.fixed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: 6em;
+  font-weight: 600;
+
+  .line {
+    width: 5.6em;
+    height: 1em;
+
+    div {
+      line-height: 1em;
+    }
+
+    &.artist {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &.designer div {
+      letter-spacing: 0.12em;
+    }
+
+    &.contact a {
+      display: flex;
+      flex-direction: row;
+      color: black;
+      font-weight: 600;
+      justify-content: space-between;
+    }
+
+    &.contact:hover {
+      background-color: magenta;
+    }
+
+    &.contact img {
+      width: 0.6em;
+    }
+  }
+}
