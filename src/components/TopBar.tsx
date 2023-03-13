@@ -4,10 +4,11 @@ import "../styles/TopBar.scss";
 import { ProjectContext } from "./ProjectContext";
 import { useContext } from "react";
 
-export default function TopBar() {
+export default function TopBar({ changeColor = false}) {
   const { activeProject } = useContext(ProjectContext);
+  const className = changeColor && activeProject ? 'topbar active' : 'topbar';
   return (
-    <div className={activeProject ? 'topbar active' : 'topbar'}>
+    <div className={className}>
       <PagesMenu />
       <Filter />
     </div>

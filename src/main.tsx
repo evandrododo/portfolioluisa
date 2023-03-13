@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     path: "/portfolioluisa",
     element: (
       <>
-        <TopBar />
+        <TopBar changeColor/>
         <Projects />
       </>
     ),

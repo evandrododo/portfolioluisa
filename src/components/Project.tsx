@@ -1,39 +1,31 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Project.scss";
 import LinkIcon from "./LinkIcon";
 import { ProjectContext } from "./ProjectContext";
 
 export default function Project({ id, title, image, color }: any) {
-  const { setActiveProject } = useContext(ProjectContext);
+  const { activeProject, setActiveProject } = useContext(ProjectContext);
   const [pointerInfo, setPointerInfo] = useState(false);
-  const [timeoutId, setTimeoutId] = useState<any>(null);
+  const [timeoutId, setTimeoutId] =  useState<any>(null);
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
 
   const handleActiveProject = (id: any) => {
     clearTimeout(timeoutId);
-    console.log("clearTimeout executado:", timeoutId);
     if (id !== null) {
       setPointerInfo(true);
-      setInfoOpacity(0);
-      const tid = setTimeout(() => {
-        console.log("setInfoOpacity(1): setTimeout executado", tid);
-        setInfoOpacity(1);
-      }, 1000);
-      console.log("setTimeout para setInfoOpacity(1) definido:", tid);
-      setTimeoutId(tid);
+      setInfoOpacity(1);
     } else {
       setInfoOpacity(0);
       const tid = setTimeout(() => {
-        console.log("pointerinfo(false): setTimeOut executado");
         setPointerInfo(false);
       }, 2000);
-      console.log("setTimeout para pointerinfo(false) definido:", tid);
       setTimeoutId(tid);
     }
 
     setActiveProject(id);
   };
+      
   return (
     <div className="project">
       <div className="project-image">
@@ -45,10 +37,10 @@ export default function Project({ id, title, image, color }: any) {
             src={image}
             alt={title}
             style={{
-              outlineColor: pointerInfo && infoOpacity ? color : "transparent",
+              outlineColor: color,
             }}
-            onPointerEnter={() => handleActiveProject(id)}
-            onPointerOut={() => handleActiveProject(null)}
+            onMouseOver={() => handleActiveProject(id)}
+            onMouseOut={() => handleActiveProject(null)}
           />
         </NavLink>
       </div>
@@ -63,7 +55,7 @@ export default function Project({ id, title, image, color }: any) {
             pointerEvents: pointerInfo ? "all" : "none",
           }}
           onMouseOver={() => handleActiveProject(id)}
-          onMouseLeave={() => handleActiveProject(null)}
+          onMouseOut={() => handleActiveProject(null)}
         >
           <h4 className="project-title">{title}</h4>
           <LinkIcon color="white" />

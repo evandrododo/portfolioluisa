@@ -25,31 +25,40 @@ export default function Projects() {
   const [bgColor, setBgColor] = useState<any>(null);
   const [bgOpacity, setBgOpacity] = useState<any>(0);
   const [timeoutId, setTimeoutId] = useState<any>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    console.log("activeProject", activeProject);
+    clearTimeout(timeoutId);
+    console.log('timeoutId', timeoutId)
     if (activeProject) {
-      clearTimeout(timeoutId);
-      console.log("clearTimeout executado:", timeoutId)
       const projectColor = projects.find(
         (project) => project.id === activeProject
       ).color;
-      setDisplayBg(true)
       setBgColor(projectColor);
+      setDisplayBg(true);
       setBgOpacity(0);
       const tid = setTimeout(() => {
         setBgOpacity(1);
-      }, 500);
+      }, 100);
       setTimeoutId(tid);
     } else {
-      clearTimeout(timeoutId);
+      if(loaded) {
+
       setBgOpacity(0);
       const tid = setTimeout(() => {
-        setDisplayBg(false)
+        setDisplayBg(false);
+        console.log('display bg para logo menos:', tid)
       }, 2000);
       setTimeoutId(tid);
+      console.log('display bg para logo mais:', tid)
+      }
     }
   }, [activeProject]);
 
+  useEffect(() => {
+    setLoaded(true);
+  }, [])
   return (
     <>
       <Lettering />

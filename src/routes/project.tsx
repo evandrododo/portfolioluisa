@@ -1,5 +1,7 @@
+import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import Lettering from "../components/Lettering";
+import { ProjectContext } from "../components/ProjectContext";
 import "../styles/projects.scss";
 
 export async function loaderProject({ params }: any) {
@@ -8,7 +10,15 @@ export async function loaderProject({ params }: any) {
   return { id };
 }
 export default function ProjectPage() {
+  const { activeProject, setActiveProject } = useContext(ProjectContext)
   const { id }: any = useLoaderData();
+
+  useEffect(() => {
+    if(activeProject) {
+      setActiveProject(null)
+    }
+  }, [])
+
   return (
     <>
       <h1>{id}</h1>
