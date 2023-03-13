@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 import "../styles/PagesMenu.scss";
+import LogoSVG from "./LogoSVG";
 
 const PagesMenu = () => {
   return (
     <div className="group-pages">
-      <img src="luisalogo.svg" className="logo" alt="Luisa Kuhn" />
+      <LogoSVG color="currentColor"/>
       <div className="pages">
         <NavLink
           to={`/portfolioluisa/`}

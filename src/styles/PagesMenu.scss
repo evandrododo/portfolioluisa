@@ -14,17 +14,20 @@
   text-decoration: underline;
   color: #333;
   align-self: flex-start;
+  transition: all 2s;
 }
 
-
+.active .logo {
+  color: white;
+}
 .logo {
   height: 3em;
   padding: 2em 2em 2em 0;
-  will-change: filter;
-  transition: filter 299ms;
+  transition: color 2s;
+  color: black;
 }
 .logo:hover {
-  filter: drop-shadow(-1 0 2em #646cffaa);
+  filter: drop-shadow(-1 0 2em #61dafbaa);
 }
 .logo.react:hover {
   filter: drop-shadow(-1 0 2em #61dafbaa);

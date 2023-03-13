@@ -1,12 +1,12 @@
 .project {
   display: flex;
   min-height: 100vh;
-  min-width: 70vw;
+  width: 91vw;
   flex-direction: row;
   justify-content: center;
   align-items: start;
   margin: 0rem 3vw 0;
-  max-width: 1440px;
+  max-width: 1480px;
 
   &:nth-child(odd) {
     justify-content: start;
@@ -16,26 +16,45 @@
   &:nth-child(even) {
     justify-content: end;
     flex-direction: row-reverse;
+    .project-info {
+      align-items: end;
+    }
   }
 
-    .project-image {
-      margin: 0em 3em;
+  .project-image {
+    margin: 0em 3em;
+    pointer-events: all;
+    cursor: pointer;
+    img {
+      outline: 5px solid transparent;
+      transition: all 0.2s ease;
     }
+  }
 
   .project-info {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    color: white;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
     h4.project-title {
       font-weight: 600;
-      font-size: 4rem;
-      margin: 0;
+      font-size: 4.6rem;
+      max-width: 6em;
+      line-height: 1em;
+      text-align: left;
+      margin: 0 0 0.2em 0;
+    }
+
+    a {
+      color: white;
     }
     a img {
       width: 4em;
       margin: 0 0.5em;
-      color: white;
     }
   }
 }
