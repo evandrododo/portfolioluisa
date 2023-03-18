@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./styles/index.scss";
 import Projects from "./routes/projects";
 import Information from "./routes/information";
@@ -8,14 +8,13 @@ import Shots from "./routes/shots";
 import TopBar from "./components/TopBar";
 import { ProjectProvider } from "./components/ProjectContext";
 import ProjectPage, { loaderProject } from "./routes/project";
-import Lettering from "./components/Lettering";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/portfolioluisa",
     element: (
       <>
-        <TopBar changeColor/>
+        <TopBar changeColor />
         <Projects />
       </>
     ),
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
     path: "/portfolioluisa/projects/:id",
     element: (
       <>
-        <TopBar />
+        <TopBar changeColor />
         <ProjectPage />
       </>
     ),

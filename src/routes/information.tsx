@@ -36,7 +36,7 @@ export default function Information() {
           </p>
         </div>
       </div>
-      <div className="contact">
+      <div className="contactinfo">
         <div className="socialmedia">
           <a
             href="https://www.instagram.com/luisa_kuhn/"

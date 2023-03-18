@@ -8,13 +8,13 @@ const projects: any[] = [
   {
     id: "project1",
     title: "Musical Ceramics",
-    image: "udu.png",
+    image: "/udu.png",
     color: "blue",
   },
   {
     id: "sculpture",
     title: "Sculpture",
-    image: "sculpture.png",
+    image: "/sculpture.png",
     color: "#FF00FF",
   },
 ];
@@ -48,10 +48,8 @@ export default function Projects() {
       setBgOpacity(0);
       const tid = setTimeout(() => {
         setDisplayBg(false);
-        console.log('display bg para logo menos:', tid)
       }, 2000);
       setTimeoutId(tid);
-      console.log('display bg para logo mais:', tid)
       }
     }
   }, [activeProject]);
