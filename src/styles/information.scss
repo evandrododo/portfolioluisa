@@ -1,0 +1,70 @@
+.information {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+  padding: 2rem 2rem 0;
+}
+
+.photo {
+  flex: 1 1 0;
+  display: block;
+  position: relative;
+  padding: 3rem;
+  img {
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right:0;
+    top: 25%;
+    display: block;
+    width: 1px;
+    height: 50%;
+    background-color: magenta;
+    margin: 0 0rem 0 0;
+  }
+}
+
+.text {
+  flex: 1 1 0;
+  font-size: 0.8rem;
+  padding: 3rem;
+  p {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 0 5rem 2rem;
+  font-size: 2rem;
+  a {
+    color: black;
+    font-weight: 600;
+    &:hover {
+      color: magenta;
+    }
+  }
+  .socialmedia {
+  svg {
+    width: 1.8rem;
+  }
+    .linkedin {
+    margin-left: 1rem;
+  }
+
+  }
+  .linkemail {
+      width: 1.5rem;
+      margin: 0.2rem 0rem -0.2rem;
+      height: auto;
+  }
+}

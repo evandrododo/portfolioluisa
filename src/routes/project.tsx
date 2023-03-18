@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
-import Lettering from "../components/Lettering";
 import { ProjectContext } from "../components/ProjectContext";
 import "../styles/projects.scss";
 

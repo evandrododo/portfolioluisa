@@ -1,4 +1,4 @@
-const LinkIcon = ({ color = "black" }: any) => {
+const LinkIcon = ({ color = "currentColor", className="" }: any) => {
   return (
     <svg
       width="112"
@@ -6,6 +6,7 @@ const LinkIcon = ({ color = "black" }: any) => {
       viewBox="0 0 112 112"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <rect
         x="2.29301"
