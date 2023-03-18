@@ -8,7 +8,7 @@ const PagesMenu = () => {
       <LogoSVG color="currentColor"/>
       <div className="pages">
         <NavLink
-          to={`/portfolioluisa/`}
+          to={`/`}
           className={({ isActive, isPending }) =>
             isActive ? "active" : isPending ? "pending" : ""
           }
@@ -16,7 +16,7 @@ const PagesMenu = () => {
           projects
         </NavLink>
         <NavLink
-          to={`/portfolioluisa/shots`}
+          to={`/shots`}
           className={({ isActive, isPending }) =>
             isActive ? "active" : isPending ? "pending" : ""
           }
@@ -24,7 +24,7 @@ const PagesMenu = () => {
           shots
         </NavLink>
         <NavLink
-          to={`/portfolioluisa/information`}
+          to={`/information`}
           className={({ isActive, isPending }) =>
             isActive ? "active" : isPending ? "pending" : ""
           }

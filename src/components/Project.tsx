@@ -30,7 +30,7 @@ export default function Project({ id, title, image, color }: any) {
     <div className="project">
       <div className="project-image">
         <NavLink
-          to={`/portfolioluisa/projects/${id}`}
+          to={`/projects/${id}`}
           style={{ display: "block" }}
         >
           <img
@@ -45,7 +45,7 @@ export default function Project({ id, title, image, color }: any) {
         </NavLink>
       </div>
       <NavLink
-        to={`/portfolioluisa/projects/${id}`}
+        to={`/projects/${id}`}
         style={{ display: "block" }}
       >
         <div
