@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
@@ -13,7 +13,7 @@ import TopBar from "./components/TopBar";
 import { ProjectProvider } from "./components/ProjectContext";
 import ProjectPage, { loaderProject } from "./routes/project";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: "/",
@@ -54,7 +54,6 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/portfolioluisa",
   }
 );
 
