@@ -21,14 +21,11 @@ const initialProjects: any[] = [
     image: "./udu.png",
     color: "blue",
     details: {
-      title: "Musical Ceramics",
       sections: [
         {
           title: "Udu",
-          description: `
-           Percussion instrument, 2022 - Brazil
-           Dimensions: 26cm x 21cm x 26cm
-          `,
+          description: `Percussion instrument, 2022 - Brazil\n \
+           Dimensions: 26cm x 21cm x 26cm `,
           image: "./udu1.png",
         },
         {

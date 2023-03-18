@@ -28,7 +28,7 @@ export default function ProjectPage() {
           project.details.sections.map((section: any) => (
             <div key={section.title}>
               <h2>{section.title}</h2>
-              <p>{section.description}</p>
+              <div>{section.description}</div>
               {typeof section.image !== "string" ? (
                 <div>
                   {section.image.map((image: any) => (
