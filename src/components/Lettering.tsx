@@ -14,7 +14,7 @@ export default function Lettering() {
       <div className="line contact">
         <NavLink to="/portfolioluisa/information">
           <div>contact</div>
-          <img src="/circleright.svg" alt="circle right" />
+          <img src="./circleright.svg" alt="circle right" />
         </NavLink>
       </div>
     </div>

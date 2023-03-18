@@ -5,8 +5,8 @@ import { ProjectContext } from "./ProjectContext";
 import { useContext } from "react";
 
 export default function TopBar({ changeColor = false}) {
-  const { activeProject } = useContext(ProjectContext);
-  const className = changeColor && activeProject ? 'topbar active' : 'topbar';
+  const { projectHovered } = useContext(ProjectContext);
+  const className = changeColor && projectHovered ? 'topbar active' : 'topbar';
   return (
     <div className={className}>
       <PagesMenu />

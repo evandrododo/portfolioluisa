@@ -5,7 +5,7 @@ import LinkIcon from "./icons/LinkIcon";
 import { ProjectContext } from "./ProjectContext";
 
 export default function Project({ id, title, image, color }: any) {
-  const { activeProject, setActiveProject } = useContext(ProjectContext);
+  const { setProjectHovered } = useContext(ProjectContext);
   const [pointerInfo, setPointerInfo] = useState(false);
   const [timeoutId, setTimeoutId] =  useState<any>(null);
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
@@ -23,7 +23,7 @@ export default function Project({ id, title, image, color }: any) {
       setTimeoutId(tid);
     }
 
-    setActiveProject(id);
+    setProjectHovered(id);
   };
       
   return (

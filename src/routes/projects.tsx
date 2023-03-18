@@ -1,39 +1,24 @@
 import { useContext, useEffect, useState } from "react";
 import Lettering from "../components/Lettering";
 import Project from "../components/Project";
-import { ProjectContext } from "../components/ProjectContext";
+import { ProjectContext, ProjectsState } from "../components/ProjectContext";
 import "../styles/projects.scss";
 
-const projects: any[] = [
-  {
-    id: "project1",
-    title: "Musical Ceramics",
-    image: "/udu.png",
-    color: "blue",
-  },
-  {
-    id: "sculpture",
-    title: "Sculpture",
-    image: "/sculpture.png",
-    color: "#FF00FF",
-  },
-];
 
 export default function Projects() {
-  const { activeProject } = useContext(ProjectContext);
+  const { projectHovered, projects, loading } =
+    useContext<ProjectsState>(ProjectContext);
   const [displayBg, setDisplayBg] = useState(false);
   const [bgColor, setBgColor] = useState<any>(null);
   const [bgOpacity, setBgOpacity] = useState<any>(0);
   const [timeoutId, setTimeoutId] = useState<any>(null);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    console.log("activeProject", activeProject);
     clearTimeout(timeoutId);
-    console.log('timeoutId', timeoutId)
-    if (activeProject) {
+    console.log("timeoutId", timeoutId);
+    if (projectHovered && projects && projects.length > 0) {
       const projectColor = projects.find(
-        (project) => project.id === activeProject
+        (project) => project.id === projectHovered
       ).color;
       setBgColor(projectColor);
       setDisplayBg(true);
@@ -43,20 +28,18 @@ export default function Projects() {
       }, 100);
       setTimeoutId(tid);
     } else {
-      if(loaded) {
-
-      setBgOpacity(0);
-      const tid = setTimeout(() => {
-        setDisplayBg(false);
-      }, 2000);
-      setTimeoutId(tid);
+      if (!loading) {
+        setBgOpacity(0);
+        const tid = setTimeout(() => {
+          setDisplayBg(false);
+        }, 2000);
+        setTimeoutId(tid);
       }
     }
-  }, [activeProject]);
+  }, [projectHovered]);
 
   useEffect(() => {
-    setLoaded(true);
-  }, [])
+  }, [loading]);
   return (
     <>
       <Lettering />
