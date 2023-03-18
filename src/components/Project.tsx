@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext,  useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Project.scss";
-import LinkIcon from "./LinkIcon";
+import LinkIcon from "./icons/LinkIcon";
 import { ProjectContext } from "./ProjectContext";
 
 export default function Project({ id, title, image, color }: any) {

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../styles/PagesMenu.scss";
-import LogoSVG from "./LogoSVG";
+import LogoSVG from "./icons/LogoSVG";
 
 const PagesMenu = () => {
   return (
