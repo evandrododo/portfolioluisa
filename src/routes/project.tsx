@@ -1,5 +1,7 @@
 import { useContext, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
+import { Container } from "../components/Container";
+import LinkIcon from "../components/icons/LinkIcon";
 import { ProjectContext } from "../components/ProjectContext";
 import "../styles/projects.scss";
 
@@ -21,16 +23,16 @@ export default function ProjectPage() {
   }, []);
 
   return (
-    <div className="project-detail">
-      <h1>{project.title}</h1>
+    <Container className="project-detail">
+      <h1 style={{color: project.color}}>{project.title}</h1>
       <div>
         {project.details &&
           project.details.sections.map((section: any) => (
             <div key={section.title}>
               <h2>{section.title}</h2>
-              <div>{section.description}</div>
+              <div className="description">{section.description}</div>
               {typeof section.image !== "string" ? (
-                <div>
+                <div className="row-between">
                   {section.image.map((image: any) => (
                     <img src={image} alt={section.title} />
                   ))}
@@ -41,6 +43,11 @@ export default function ProjectPage() {
             </div>
           ))}
       </div>
-    </div>
+      <div className="center">
+        <NavLink to="/">
+          <LinkIcon />
+        </NavLink>
+      </div>
+    </Container>
   );
 }

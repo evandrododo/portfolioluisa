@@ -1,3 +1,4 @@
+import { Container } from "../components/Container";
 import Instagram from "../components/icons/Instagram";
 import Linkedin from "../components/icons/Linkedin";
 import LinkIcon from "../components/icons/LinkIcon";
@@ -5,7 +6,7 @@ import "../styles/information.scss";
 
 export default function Information() {
   return (
-    <>
+    <Container>
       <div className="information">
         <div className="photo">
           <img src="luisakuhn.jpg" alt="Luisa Kuhn" />
@@ -62,6 +63,6 @@ export default function Information() {
           <a href="tel:+5551984107790">+55 51 98410-7790</a>
         </div>
       </div>
-    </>
+    </Container>
   );
 }

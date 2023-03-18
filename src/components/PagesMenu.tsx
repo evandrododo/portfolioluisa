@@ -5,7 +5,12 @@ import LogoSVG from "./icons/LogoSVG";
 const PagesMenu = () => {
   return (
     <div className="group-pages">
-      <LogoSVG color="currentColor"/>
+      <NavLink
+        to={`/`}
+        className={"logo"}
+      >
+        <LogoSVG/>
+      </NavLink>
       <div className="pages">
         <NavLink
           to={`/`}

@@ -1,4 +1,4 @@
-const LogoSVG = ({ color = "black" }) => {
+const LogoSVG = ({ color = "currentColor" }) => {
   return (
     <svg
       width="85"
@@ -6,7 +6,6 @@ const LogoSVG = ({ color = "black" }) => {
       viewBox="0 0 85 50"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      className="logo"
     >
       <g clipPath="url(#clip0_127_504)">
         <path d="M15.2794 0H10.167V26.2122H15.2794V0Z" fill={color} />

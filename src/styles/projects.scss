@@ -24,4 +24,36 @@
 .project-detail {
   padding-top: 5rem;
   text-align: left;
+  &.container {
+    max-width: 1142px;
+  }
+  h1 {
+    font-weight: 600;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 2rem 0 0 0;
+  }
+  .description {
+    font-size: 0.8rem;
+    margin-bottom: 1rem
+  }
+  .row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  a svg{
+    width: 2rem;
+    transform: rotate(180deg);
+  }
+  .center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }

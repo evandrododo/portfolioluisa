@@ -26,15 +26,14 @@ const initialProjects: any[] = [
           title: "Udu",
           description: `Percussion instrument, 2022 - Brazil\n \
            Dimensions: 26cm x 21cm x 26cm `,
-          image: "./udu1.png",
+          image: "./udu1.jpg",
         },
         {
           title: "Maraca",
-          description: `
-            Percussion instrument, 2022 - Brazil
+          description: `Percussion instrument, 2022 - Brazil
             Dimensions: 18cm x 11cm x 18cm
           `,
-          image: ["./maraca1.png", "./maraca2.png"],
+          image: ["./maraca1.jpg", "./maraca2.jpg"],
         },
       ],
     },
