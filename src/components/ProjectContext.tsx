@@ -57,7 +57,7 @@ export const ProjectProvider = ({ children }: any) => {
     //   const response = await fetch("/api/projects");
     //   const data = await response.json();
     //   setProjects(data);
-    //   setLoading(false);
+      setLoading(false);
     // };
     // fetchProjects();
   }, []);

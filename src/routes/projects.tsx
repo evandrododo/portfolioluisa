@@ -16,7 +16,11 @@ export default function Projects() {
   useEffect(() => {
     clearTimeout(timeoutId);
     console.log("timeoutId", timeoutId);
-    if (projectHovered && projects && projects.length > 0) {
+    if(!projects || projects.length === 0) {
+      return;
+    }
+      
+    if (projectHovered) {
       const projectColor = projects.find(
         (project) => project.id === projectHovered
       ).color;
@@ -28,8 +32,11 @@ export default function Projects() {
       }, 100);
       setTimeoutId(tid);
     } else {
+        console.log('bgOpacity', bgOpacity, loading)
       if (!loading) {
         setBgOpacity(0);
+        console.log('bgOpacity', bgOpacity)
+      console.log('hover false')
         const tid = setTimeout(() => {
           setDisplayBg(false);
         }, 2000);
