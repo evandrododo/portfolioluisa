@@ -21,7 +21,7 @@ const PagesMenu = () => {
           projects
         </NavLink>
         <NavLink
-          to={`/shots`}
+          to={`/#shots`}
           className={({ isActive, isPending }) =>
             isActive ? "active" : isPending ? "pending" : ""
           }

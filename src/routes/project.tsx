@@ -24,7 +24,7 @@ export default function ProjectPage() {
 
   return (
     <Container className="project-detail">
-      <h1 style={{color: project.color}}>{project.title}</h1>
+      <h1 style={{ color: project.color }}>{project.title}</h1>
       <div>
         {project.details &&
           project.details.sections.map((section: any) => (
@@ -32,10 +32,24 @@ export default function ProjectPage() {
               <h2>{section.title}</h2>
               <div className="description">{section.description}</div>
               {typeof section.image !== "string" ? (
-                <div className="row-between">
-                  {section.image.map((image: any) => (
-                    <img src={image} alt={section.title} />
-                  ))}
+                <div style={section.containerImageStyle}>
+                  {section.image.map((image: any) => {
+                    if (typeof image === "object") {
+                      return (
+                        <>
+                          <img
+                            src={image.src}
+                            alt={section.title}
+                            style={image.customStyle}
+                          />
+                          {image.caption && (
+                            <div className="caption">{image.caption}</div>
+                          )}
+                        </>
+                      );
+                    }
+                    return <img src={image} alt={section.title} />;
+                  })}
                 </div>
               ) : (
                 <img src={section.image} alt={section.title} />

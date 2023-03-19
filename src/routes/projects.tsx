@@ -69,6 +69,11 @@ export default function Projects() {
           />
         ))}
       </div>
+      <div className="shots" id="shots">
+        <div className="shots-title">
+           <h3>Shots</h3>
+          </div>
+        </div>
     </>
   );
 }
