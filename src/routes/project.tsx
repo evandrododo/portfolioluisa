@@ -29,9 +29,11 @@ export default function ProjectPage() {
         {project.details &&
           project.details.sections.map((section: any) => (
             <div key={section.title}>
-              <h2>{section.title}</h2>
-              <div className="description">{section.description}</div>
-              {typeof section.image !== "string" ? (
+              {section.title && <h2>{section.title}</h2>}
+              {section.description && (
+                <div className="description">{section.description}</div>
+              )}
+              {section.image && typeof section.image !== "string" && (
                 <div style={section.containerImageStyle}>
                   {section.image.map((image: any) => {
                     if (typeof image === "object") {
@@ -51,9 +53,11 @@ export default function ProjectPage() {
                     return <img src={image} alt={section.title} />;
                   })}
                 </div>
-              ) : (
+              )}
+              {section.image && typeof section.image === "string" && (
                 <img src={section.image} alt={section.title} />
               )}
+              {section.embedVideo}
             </div>
           ))}
       </div>

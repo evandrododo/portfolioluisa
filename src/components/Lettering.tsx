@@ -12,7 +12,7 @@ export default function Lettering() {
         <div>Designer</div>
       </div>
       <div className="line contact">
-        <NavLink to="/portfolioluisa/information">
+        <NavLink to="/information">
           <div>contact</div>
           <img src="./circleright.svg" alt="circle right" />
         </NavLink>

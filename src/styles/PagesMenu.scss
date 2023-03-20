@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
 }
+
 .pages a {
   font-weight: 600;
   font-size: 1em;
@@ -15,24 +16,34 @@
   color: black;
   align-self: flex-start;
   transition: all 2s;
+
   &:hover {
     color: magenta;
-  transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  &.active {
+    color: magenta;
+    transition: all 1s;
   }
 }
 
 .active .logo {
   color: white;
 }
+
 .logo {
   height: 3em;
   margin: 2em 2em 2em 0;
   transition: color 2s;
   color: black;
 }
+
 .logo:hover {
+  transition: color 1s;
   filter: drop-shadow(-1 0 2em #61dafbaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(-1 0 2em #61dafbaa);
 }

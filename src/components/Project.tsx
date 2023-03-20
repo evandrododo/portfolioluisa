@@ -1,13 +1,19 @@
-import { useContext,  useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Project.scss";
 import LinkIcon from "./icons/LinkIcon";
 import { ProjectContext } from "./ProjectContext";
 
-export default function Project({ id, title, image, color }: any) {
+export default function Project({
+  id,
+  title,
+  image,
+  color,
+  textColor = "white",
+}: any) {
   const { setProjectHovered } = useContext(ProjectContext);
   const [pointerInfo, setPointerInfo] = useState(false);
-  const [timeoutId, setTimeoutId] =  useState<any>(null);
+  const [timeoutId, setTimeoutId] = useState<any>(null);
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
 
   const handleActiveProject = (id: any) => {
@@ -25,14 +31,11 @@ export default function Project({ id, title, image, color }: any) {
 
     setProjectHovered(id);
   };
-      
+
   return (
     <div className="project">
       <div className="project-image">
-        <NavLink
-          to={`/projects/${id}`}
-          style={{ display: "block" }}
-        >
+        <NavLink to={`/projects/${id}`} style={{ display: "block" }}>
           <img
             src={image}
             alt={title}
@@ -44,10 +47,7 @@ export default function Project({ id, title, image, color }: any) {
           />
         </NavLink>
       </div>
-      <NavLink
-        to={`/projects/${id}`}
-        style={{ display: "block" }}
-      >
+      <NavLink to={`/projects/${id}`} style={{ display: "block" }}>
         <div
           className="project-info"
           style={{
@@ -57,8 +57,15 @@ export default function Project({ id, title, image, color }: any) {
           onMouseOver={() => handleActiveProject(id)}
           onMouseOut={() => handleActiveProject(null)}
         >
-          <h4 className="project-title">{title}</h4>
-          <LinkIcon color="white" />
+          <h4
+            className="project-title"
+            style={{
+              color: textColor,
+            }}
+          >
+            {title}
+          </h4>
+          <LinkIcon color={textColor} />
         </div>
       </NavLink>
     </div>

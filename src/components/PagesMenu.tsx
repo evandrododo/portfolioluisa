@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../styles/PagesMenu.scss";
 import LogoSVG from "./icons/LogoSVG";
+import { HashLink } from 'react-router-hash-link';
 
 const PagesMenu = () => {
   return (
@@ -12,22 +13,18 @@ const PagesMenu = () => {
         <LogoSVG/>
       </NavLink>
       <div className="pages">
-        <NavLink
-          to={`/`}
-          className={({ isActive, isPending }) =>
-            isActive ? "active" : isPending ? "pending" : ""
-          }
+        <HashLink
+          smooth
+          to={`/#projects`}
         >
           projects
-        </NavLink>
-        <NavLink
+        </HashLink>
+        <HashLink
+          smooth
           to={`/#shots`}
-          className={({ isActive, isPending }) =>
-            isActive ? "active" : isPending ? "pending" : ""
-          }
         >
           shots
-        </NavLink>
+        </HashLink>
         <NavLink
           to={`/information`}
           className={({ isActive, isPending }) =>

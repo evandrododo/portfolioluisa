@@ -8,12 +8,11 @@ import {
 import "./styles/index.scss";
 import Projects from "./routes/projects";
 import Information from "./routes/information";
-import Shots from "./routes/shots";
 import TopBar from "./components/TopBar";
 import { ProjectProvider } from "./components/ProjectContext";
 import ProjectPage, { loaderProject } from "./routes/project";
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   [
     {
       path: "/",
@@ -21,15 +20,6 @@ const router = createHashRouter(
         <>
           <TopBar changeColor />
           <Projects />
-        </>
-      ),
-    },
-    {
-      path: "/shots",
-      element: (
-        <>
-          <TopBar />
-          <Shots />
         </>
       ),
     },
@@ -52,15 +42,15 @@ const router = createHashRouter(
         </>
       ),
     },
-  ],
-  {
-  }
+  ]
 );
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ProjectProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}
+      
+      />
     </ProjectProvider>
   </React.StrictMode>
 );

@@ -16,8 +16,13 @@
   &:nth-child(even) {
     justify-content: end;
     flex-direction: row-reverse;
+
     .project-info {
       align-items: end;
+
+      h4.project-title {
+        text-align: right;
+      }
     }
   }
 
@@ -25,10 +30,12 @@
     margin: 0em 3em;
     pointer-events: all;
     cursor: pointer;
+
     img {
       outline: 0px solid transparent;
       transition: all 0.6s linear;
     }
+
     &:hover img {
       outline-width: 10px;
     }
@@ -55,6 +62,7 @@
     a {
       color: white;
     }
+
     a img {
       width: 4em;
       margin: 0 0.5em;
