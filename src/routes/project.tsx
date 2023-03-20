@@ -23,49 +23,60 @@ export default function ProjectPage() {
   }, []);
 
   return (
-    <Container className="project-detail">
-      <h1 style={{ color: project.color }}>{project.title}</h1>
-      <div>
-        {project.details &&
-          project.details.sections.map((section: any) => (
-            <div key={section.title}>
-              {section.title && <h2>{section.title}</h2>}
-              {section.description && (
-                <div className="description">{section.description}</div>
-              )}
-              {section.image && typeof section.image !== "string" && (
-                <div style={section.containerImageStyle}>
-                  {section.image.map((image: any) => {
-                    if (typeof image === "object") {
-                      return (
-                        <>
-                          <img
-                            src={image.src}
-                            alt={section.title}
-                            style={image.customStyle}
-                          />
-                          {image.caption && (
-                            <div className="caption">{image.caption}</div>
-                          )}
-                        </>
-                      );
-                    }
-                    return <img src={image} alt={section.title} />;
-                  })}
-                </div>
-              )}
-              {section.image && typeof section.image === "string" && (
-                <img src={section.image} alt={section.title} />
-              )}
-              {section.embedVideo}
-            </div>
-          ))}
-      </div>
-      <div className="center">
-        <NavLink to="/">
-          <LinkIcon />
-        </NavLink>
-      </div>
-    </Container>
+    <>
+      <h1
+        style={{
+          backgroundColor: project.color,
+          color: project.textColor || "white",
+          padding: '3em 0 2em',
+          fontWeight: 600
+        }}
+      >
+        <Container className="project-detail">{project.title}</Container>
+      </h1>
+      <Container className="project-detail">
+        <div>
+          {project.details &&
+            project.details.sections.map((section: any) => (
+              <div key={section.title}>
+                {section.title && <h2>{section.title}</h2>}
+                {section.description && (
+                  <div className="description">{section.description}</div>
+                )}
+                {section.image && typeof section.image !== "string" && (
+                  <div style={section.containerImageStyle}>
+                    {section.image.map((image: any) => {
+                      if (typeof image === "object") {
+                        return (
+                          <>
+                            <img
+                              src={image.src}
+                              alt={section.title}
+                              style={image.customStyle}
+                            />
+                            {image.caption && (
+                              <div className="caption">{image.caption}</div>
+                            )}
+                          </>
+                        );
+                      }
+                      return <img src={image} alt={section.title} />;
+                    })}
+                  </div>
+                )}
+                {section.image && typeof section.image === "string" && (
+                  <img src={section.image} alt={section.title} />
+                )}
+                {section.embedVideo}
+              </div>
+            ))}
+        </div>
+        <div className="center">
+          <NavLink to="/">
+            <LinkIcon />
+          </NavLink>
+        </div>
+      </Container>
+    </>
   );
 }

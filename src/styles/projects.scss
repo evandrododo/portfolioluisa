@@ -24,7 +24,6 @@
 }
 
 .project-detail {
-  padding-top: 5rem;
   text-align: left;
 
   &.container {
@@ -43,7 +42,8 @@
 
   .description {
     font-size: 0.8rem;
-    margin-bottom: 1rem
+    margin-bottom: 2.5rem;
+    font-weight: 300;
   }
 
   .row-between {
@@ -102,6 +102,8 @@
     width: 100%;
     max-width: 1142px;
     padding-bottom: 3rem;
+    background-color: white;
+    z-index: 2;
   }
 
   .shot {
