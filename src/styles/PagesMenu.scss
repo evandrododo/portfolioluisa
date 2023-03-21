@@ -2,6 +2,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .group-pages {
+    justify-content: space-between;
+  }
+}
+
+.menu-button {
+  padding: 0.5em 0.3em;
+  cursor: pointer;
 }
 
 .pages a {
@@ -14,7 +26,6 @@
   border: 0px solid #ccc;
   border-radius: 4px;
   text-decoration: underline;
-  align-self: flex-start;
   transition: all 2s;
 
   &:hover {
@@ -28,15 +39,63 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .pages {
+    display: none;
+
+    &.active {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      padding: 4.3rem 3.7rem;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      align-items: end;
+      background-color: magenta;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    a {
+      margin: 1.5rem 0.3em;
+      &:hover {
+        color: magenta;
+        transition: all 0.2s;
+      }
+      
+      &.active {
+        color: magenta;
+        transition: all 1s;
+      }
+    }
+  }
+}
+
 .active .logo {
   color: white;
 }
 
 .logo {
-  height: 3em;
   margin: 2em 2em 2em 0;
   transition: color 2s;
   color: inherit;
+
+  svg {
+    height: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin: 1em 1em 1em 0;
+
+    svg {
+      height: 2em;
+    }
+  }
 }
 
 .logo:hover {

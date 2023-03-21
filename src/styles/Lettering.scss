@@ -11,6 +11,15 @@
   flex-direction: column;
   text-transform: uppercase;
   font-size: 6em;
+  // downsize in mobile
+  @media (max-width: 768px) {
+    font-size: 3em;
+  }
+  @media (max-width: 480px) {
+    font-size: 2em;
+  }
+
+
   font-weight: 600;
 
   .line {
