@@ -12,6 +12,7 @@
   position: relative;
   padding: 3rem;
   text-align: left;
+
   img {
     width: 100%;
     max-width: 400px;
@@ -21,7 +22,7 @@
   &::after {
     content: "";
     position: absolute;
-    right:0;
+    right: 0;
     top: 25%;
     display: block;
     width: 2px;
@@ -35,6 +36,7 @@
   flex: 1 1 0;
   font-size: 0.8rem;
   padding: 3rem;
+
   p {
     width: 100%;
     text-align: left;
@@ -48,25 +50,67 @@
   align-items: start;
   padding: 0 5rem 2rem;
   font-size: 2rem;
+
   a {
     color: black;
     font-weight: 600;
+
     &:hover {
       color: magenta;
     }
   }
+
   .socialmedia {
-  svg {
-    width: 1.8rem;
-  }
+    svg {
+      width: 1.8rem;
+    }
+
     .linkedin {
-    margin-left: 1rem;
-  }
+      margin-left: 1rem;
+    }
 
   }
+
   .linkemail {
+    width: 1.5rem;
+    margin: 0.2rem 0rem -0.2rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .information {
+    flex-direction: column;
+
+    .photo {
+      padding: 0rem 0 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(100% + 1rem);
+        left: 25%;
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: magenta;
+        margin: 0 0rem 0 0;
+      }
+    }
+
+    .text {
+      padding: 2rem 0 0;
+    }
+
+  }
+  .contactinfo {
+    padding: 2rem ;
+    font-size: 1rem;
+    .socialmedia svg {
       width: 1.5rem;
-      margin: 0.2rem 0rem -0.2rem;
-      height: auto;
+    }
+    .linkemail {
+      width: 1rem;
+    }
   }
 }

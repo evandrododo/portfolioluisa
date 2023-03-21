@@ -133,3 +133,17 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+
+  .shots {
+    .shot {
+      padding: 1em;
+      box-sizing: border-box;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -47,7 +47,7 @@ export default function Project({
           />
         </NavLink>
       </div>
-      <NavLink to={`/projects/${id}`} style={{ display: "block" }}>
+      <NavLink to={`/projects/${id}`} className="title-link">
         <div
           className="project-info"
           style={{

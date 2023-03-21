@@ -12,45 +12,41 @@ import TopBar from "./components/TopBar";
 import { ProjectProvider } from "./components/ProjectContext";
 import ProjectPage, { loaderProject } from "./routes/project";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: (
-        <>
-          <TopBar changeColor />
-          <Projects />
-        </>
-      ),
-    },
-    {
-      path: "/projects/:id",
-      element: (
-        <>
-          <TopBar changeColor />
-          <ProjectPage />
-        </>
-      ),
-      loader: loaderProject,
-    },
-    {
-      path: "/information",
-      element: (
-        <>
-          <TopBar />
-          <Information />
-        </>
-      ),
-    },
-  ]
-);
+const router = createHashRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <TopBar changeColor />
+        <Projects />
+      </>
+    ),
+  },
+  {
+    path: "/projects/:id",
+    element: (
+      <>
+        <TopBar changeColor />
+        <ProjectPage />
+      </>
+    ),
+    loader: loaderProject,
+  },
+  {
+    path: "/information",
+    element: (
+      <>
+        <TopBar />
+        <Information />
+      </>
+    ),
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ProjectProvider>
-      <RouterProvider router={router}
-      
-      />
+      <RouterProvider router={router} />
     </ProjectProvider>
   </React.StrictMode>
 );

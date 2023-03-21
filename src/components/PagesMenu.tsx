@@ -30,10 +30,10 @@ const PagesMenu = ({
         <div
           className={`pages ${isMobile && activeMobileMenu ? "active" : ""}`}
         >
-          <HashLink smooth to={`/#projects`}>
+          <HashLink smooth to={`/#projects`} onClick={() => setActiveMobileMenu(false)}>
             projects
           </HashLink>
-          <HashLink smooth to={`/#shots`}>
+          <HashLink smooth to={`/#shots`} onClick={() => setActiveMobileMenu(false)}>
             shots
           </HashLink>
           <NavLink

@@ -20,8 +20,9 @@ export default function TopBar({ changeColor = false }) {
   });
   const { projectHovered, projects } = useContext(ProjectContext);
   const [previousUrl, setPreviousUrl] = useState<string>("");
-  // get project id from url
-  const url = window.location.href;
+  const url = window.location.href+window.location.hash;
+  console.log('url', url)
+  // Url change
   if (url !== previousUrl) {
     setActiveMobileMenu(false);
     setPreviousUrl(url);
@@ -29,7 +30,6 @@ export default function TopBar({ changeColor = false }) {
   const urlArray = url.split("/");
   const projectIdUrl = urlArray[urlArray.length - 1];
   const projectActive = projects.find((project) => project.id === projectIdUrl);
-  console.log("projectActive", projectActive);
 
   const projectHover = projects.find(
     (project) => project.id === projectHovered
