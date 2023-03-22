@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Project.scss";
+import useOnScreen from "../utils";
 import LinkIcon from "./icons/LinkIcon";
 import { ProjectContext } from "./ProjectContext";
 
@@ -15,6 +16,17 @@ export default function Project({
   const [pointerInfo, setPointerInfo] = useState(false);
   const [timeoutId, setTimeoutId] = useState<any>(null);
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
+
+  const ref = useRef<HTMLImageElement>(null)
+  const isVisible = useOnScreen(ref)
+  
+  const isMobile = window.innerWidth < 768;
+
+  useEffect(() => {
+    if (isVisible && isMobile) {
+      handleActiveProject(id)
+    } 
+  }, [isVisible])
 
   const handleActiveProject = (id: any) => {
     clearTimeout(timeoutId);
@@ -42,6 +54,7 @@ export default function Project({
             style={{
               outlineColor: color,
             }}
+            ref={ref}
             onMouseOver={() => handleActiveProject(id)}
             onMouseOut={() => handleActiveProject(null)}
           />
