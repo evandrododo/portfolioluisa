@@ -54,7 +54,6 @@ export default function Project({
             style={{
               outlineColor: color,
             }}
-            ref={ref}
             onMouseOver={() => handleActiveProject(id)}
             onMouseOut={() => handleActiveProject(null)}
           />
@@ -62,6 +61,7 @@ export default function Project({
       </div>
       <NavLink to={`/projects/${id}`} className="title-link">
         <div
+            ref={ref}
           className="project-info"
           style={{
             opacity: infoOpacity,
