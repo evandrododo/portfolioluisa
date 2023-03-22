@@ -134,6 +134,21 @@
   }
 }
 
+.image-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 1rem 0;
+  gap: 1rem;
+  img {
+  flex-grow: 0 0 1;
+  }
+}
+
+
 @media (max-width: 768px) {
 
   .shots {
@@ -145,5 +160,11 @@
         width: 100%;
       }
     }
+  }
+  .image-row {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: nowrap;
   }
 }

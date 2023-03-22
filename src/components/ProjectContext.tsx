@@ -16,7 +16,7 @@ export const ProjectContext = createContext({
 
 const initialProjects: any[] = [
   {
-    id: "project1",
+    id: "ceramics",
     title: "Musical Ceramics",
     image: "/udu.png",
     color: "blue",
@@ -34,13 +34,7 @@ const initialProjects: any[] = [
             Dimensions: 18cm x 11cm x 18cm
           `,
           image: ["/maraca1.jpg", "/maraca2.jpg"],
-          containerImageStyle: {
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            margin: "1rem 0",
-          },
+          containerImageClass: "image-row",
         },
       ],
     },

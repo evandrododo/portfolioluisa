@@ -16,12 +16,12 @@ const Menu = () => {
         width="24"
         height="24"
       >
-        <rect width="24" height="24" fill="#D9D9D9" />
+        <rect width="24" height="24" fill="currentColor" />
       </mask>
       <g mask="url(#mask0_217_527)">
         <path
           d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z"
-          fill="#1C1B1F"
+          fill="currentColor"
         />
       </g>
     </svg>

@@ -28,8 +28,8 @@ export default function ProjectPage() {
         style={{
           backgroundColor: project.color,
           color: project.textColor || "white",
-          padding: '3em 0 2em',
-          fontWeight: 600
+          padding: "3em 0 2em",
+          fontWeight: 600,
         }}
       >
         <Container className="project-detail">{project.title}</Container>
@@ -44,7 +44,10 @@ export default function ProjectPage() {
                   <div className="description">{section.description}</div>
                 )}
                 {section.image && typeof section.image !== "string" && (
-                  <div style={section.containerImageStyle}>
+                  <div
+                    style={section.containerImageStyle}
+                    className={section.containerImageClass}
+                  >
                     {section.image.map((image: any) => {
                       if (typeof image === "object") {
                         return (
