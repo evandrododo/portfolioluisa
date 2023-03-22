@@ -1,12 +1,31 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Lettering from "../components/Lettering";
 import Project from "../components/Project";
 import { ProjectContext, ProjectsState } from "../components/ProjectContext";
 import "../styles/projects.scss";
+import useOnScreen from "../utils";
 
 export default function Projects() {
-  const { projectHovered, projects, loading } =
+  const { projectHovered, setProjectHovered, projects, loading } =
     useContext<ProjectsState>(ProjectContext);
+  const refShots = useRef<HTMLHeadingElement>(null);
+  const refVulva = useRef<HTMLImageElement>(null);
+  const isShotsTitleVisible = useOnScreen(refShots);
+  const isVulvaVisible = useOnScreen(refVulva);
+  const isMobile = window.innerWidth < 768;
+
+  useEffect(() => {
+    if (isVulvaVisible && isMobile) {
+      setProjectHovered(null)
+    }
+  }, [isVulvaVisible])
+
+  useEffect(() => {
+    if (isShotsTitleVisible && isMobile) {
+      setProjectHovered('sculpture')
+    } 
+  }, [isShotsTitleVisible])
+
   const [displayBg, setDisplayBg] = useState(false);
   const [bgColor, setBgColor] = useState<any>(null);
   const [bgOpacity, setBgOpacity] = useState<any>(0);
@@ -70,18 +89,18 @@ export default function Projects() {
       </div>
       <div className="shots" id="shots">
         <div className="shots-title">
-          <h3>Shots</h3>
+          <h3 ref={refShots}>Shots</h3>
         </div>
         <div className="shots-list">
           <div className="shot">
             <div>
-              <img src="/image28.png" alt="Vulva digital illustration" />
+              <img src="/image28.png" alt="Vulva digital illustration"/>
               <span className="caption">Digital Illustration, 2022</span>
             </div>
           </div>
           <div className="shot">
             <div>
-              <img src="/abusivo.png" alt="relacionamento abusivo" />
+              <img src="/abusivo.png" alt="relacionamento abusivo" ref={refVulva} />
               <span className="caption">
                 Digital Illustration and animation, 2016
               </span>
