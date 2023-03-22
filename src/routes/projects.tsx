@@ -87,15 +87,13 @@ export default function Projects() {
               </span>
             </div>
           </div>
-          <div className="shot">
-            <div>
-              <div className="shot" style={{ flexDirection: "row" }}>
-                <img src="/cyanotype1.png" alt="foto azul 1" />
-                <img src="/cyanotype2.png" alt="foto azul 2" />
-                <img src="/cyanotype3.png" alt="foto azul 3" />
-              </div>
-              <span className="caption">Cianotype, 2012</span>
+          <div className="shot cyanotype">
+            <div className="img-container">
+              <img src="/cyanotype1.png" alt="foto azul 1" />
+              <img src="/cyanotype2.png" alt="foto azul 2" />
+              <img src="/cyanotype3.png" alt="foto azul 3" />
             </div>
+            <span className="caption">Cianotype, 2012</span>
           </div>
           <div className="shot left">
             <div>

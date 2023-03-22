@@ -131,6 +131,23 @@
       justify-content: center;
       align-items: start;
     }
+    &.cyanotype {
+      flex-direction: column;
+      align-items: center;
+      justify-content: stretch;
+      flex-wrap: no-wrap;
+      .img-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap ;
+        img {
+          max-width:33%;
+        }
+      }
+    }
   }
 }
 
@@ -158,6 +175,18 @@
 
       img {
         width: 100%;
+      }
+    
+      &.cyanotype {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .img-container {
+          flex-direction: column;
+          img {
+            max-width: 100%;
+          }
+        }
       }
     }
   }
