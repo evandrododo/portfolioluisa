@@ -66,10 +66,11 @@
     align-items: center;
   }
 
-  .caption {
-    font-size: 0.8rem;
-    margin: 0 0 0 0rem;
-  }
+}
+
+.caption {
+  font-size: 0.6rem;
+  margin: 0.2rem 0 0 0rem;
 }
 
 .shots {
@@ -81,13 +82,13 @@
   text-align: center;
 
   .shots-title {
-    margin: 2rem 0 0 0;
+    margin: 0 0 0 0;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    height: 80vh;
+    height: 39vh;
     width: 100%;
     z-index: 3;
     position: relative;
@@ -120,7 +121,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0;
+    margin: 7rem 0;
     flex-direction: row;
 
     &.left {
@@ -186,6 +187,7 @@
     .shot {
       padding: 1em;
       box-sizing: border-box;
+      margin: 5rem 0;
 
       video,
       img {
