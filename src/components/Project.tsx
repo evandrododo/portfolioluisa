@@ -10,6 +10,7 @@ export default function Project({
   title,
   image,
   color,
+  video,
   textColor = "white",
 }: any) {
   const { setProjectHovered } = useContext(ProjectContext);
@@ -17,16 +18,16 @@ export default function Project({
   const [timeoutId, setTimeoutId] = useState<any>(null);
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
 
-  const ref = useRef<HTMLImageElement>(null)
-  const isVisible = useOnScreen(ref)
-  
-  const isMobile = window.innerWidth < 768;
+  const ref = useRef<HTMLImageElement>(null);
+  const isVisible = useOnScreen(ref);
+
+  const isMobile = window.innerWidth < 1200;
 
   useEffect(() => {
     if (isVisible && isMobile) {
-      handleActiveProject(id)
-    } 
-  }, [isVisible])
+      handleActiveProject(id);
+    }
+  }, [isVisible]);
 
   const handleActiveProject = (id: any) => {
     clearTimeout(timeoutId);
@@ -48,20 +49,35 @@ export default function Project({
     <div className="project">
       <div className="project-image">
         <NavLink to={`/projects/${id}`} style={{ display: "block" }}>
-          <img
-            src={image}
-            alt={title}
-            style={{
-              outlineColor: color,
-            }}
-            onMouseOver={() => handleActiveProject(id)}
-            onMouseOut={() => handleActiveProject(null)}
-          />
+          {video ? (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                outlineColor: color,
+              }}
+              onMouseOver={() => handleActiveProject(id)}
+              onMouseOut={() => handleActiveProject(null)}
+            />
+          ) : (
+            <img
+              src={image}
+              alt={title}
+              style={{
+                outlineColor: color,
+              }}
+              onMouseOver={() => handleActiveProject(id)}
+              onMouseOut={() => handleActiveProject(null)}
+            />
+          )}
         </NavLink>
       </div>
       <NavLink to={`/projects/${id}`} className="title-link">
         <div
-            ref={ref}
+          ref={ref}
           className="project-info"
           style={{
             opacity: infoOpacity,
@@ -78,7 +94,7 @@ export default function Project({
           >
             {title}
           </h4>
-          <LinkIcon color={textColor} />
+          <LinkIcon color={textColor} context="project" />
         </div>
       </NavLink>
     </div>

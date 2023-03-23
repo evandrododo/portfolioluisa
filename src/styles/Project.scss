@@ -31,11 +31,13 @@
     pointer-events: all;
     cursor: pointer;
 
-    img {
+    video, img {
+      max-width: 100%;
       outline: 0px solid transparent;
       transition: all 0.6s linear;
     }
 
+    &:hover video,
     &:hover img {
       outline-width: 10px;
     }
@@ -56,7 +58,7 @@
       font-weight: 600;
       font-size: 4.6rem;
       max-width: 6em;
-      line-height: 1em;
+      line-height: 1.1em;
       text-align: left;
       margin: 0 0 0.2em 0;
     }
@@ -65,6 +67,7 @@
       color: white;
     }
 
+    a video,
     a img {
       width: 4em;
       margin: 0 0.5em;
@@ -79,6 +82,8 @@
 @media (max-width: 1200px) {
   div.project {
     align-items: center;
+    min-height: auto; 
+
     .project-image {
       margin: 0em;
       width: 100%;
@@ -87,7 +92,7 @@
         display: block;
         width: 100%;
 
-        img {
+        video, img {
           width: 70%;
         }
       }
@@ -114,8 +119,16 @@
       align-items: start;
       padding: 1rem 0;
 
+      &:nth-child(n) {
+        align-items: start;
+      }
+
       h4.project-title {
         font-size: 2rem;
+        max-width: 10em;
+        &:nth-child(n) {
+        text-align: left;
+        }
       }
 
       svg {
@@ -137,9 +150,25 @@
         display: block;
         width: 100%;
 
-        img {
+        video, img {
           width: 100%;
         }
+      }
+    }
+
+    .title-link {
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .project-info {
+      padding-bottom: 7.2em;
+      .project-title {
+        line-height: 1.3em;
+      }
+
+      &:nth-child(n) {
+        align-items: start;
       }
     }
   }

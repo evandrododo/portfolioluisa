@@ -198,6 +198,7 @@ const initialProjects: any[] = [
     id: "videoart",
     title: "Video Art",
     image: "./videoart.png",
+    video: './videoart.webm',
     color: "#00FFFF",
     textColor: "#000000",
     details: {
@@ -209,7 +210,7 @@ const initialProjects: any[] = [
             <>
               <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
                 <iframe
-                  src="https://player.vimeo.com/video/216410019?h=5f28440f25"
+                  src="https://player.vimeo.com/video/216410019?h=5f28440f25&title=0&byline=0&portrait=0"
                   style={{
                     position: "absolute",
                     top: 0,
@@ -233,7 +234,7 @@ const initialProjects: any[] = [
             <>
               <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
                 <iframe
-                  src="https://player.vimeo.com/video/166593232?h=7ccca5adea"
+                  src="https://player.vimeo.com/video/166593232?h=7ccca5adea&title=0&byline=0&portrait=0"
                   style={{
                     position: "absolute",
                     top: 0,

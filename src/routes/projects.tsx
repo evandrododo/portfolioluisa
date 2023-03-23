@@ -10,20 +10,23 @@ export default function Projects() {
     useContext<ProjectsState>(ProjectContext);
   const refShots = useRef<HTMLHeadingElement>(null);
   const refVulva = useRef<HTMLImageElement>(null);
+  const refDeactiveMarker = useRef<HTMLDivElement>(null);
   const isShotsTitleVisible = useOnScreen(refShots);
   const isVulvaVisible = useOnScreen(refVulva);
-  const isMobile = window.innerWidth < 768;
+  const isDeactiveMarkerVisible = useOnScreen(refDeactiveMarker);
 
   useEffect(() => {
-    if (isVulvaVisible && isMobile) {
+    if (isVulvaVisible || isDeactiveMarkerVisible) {
       setProjectHovered(null)
     }
-  }, [isVulvaVisible])
+  }, [isVulvaVisible, isDeactiveMarkerVisible])
 
   useEffect(() => {
-    if (isShotsTitleVisible && isMobile) {
+    if (isShotsTitleVisible) {
       setProjectHovered('sculpture')
-    } 
+    } else {
+      setProjectHovered(null)
+    }
   }, [isShotsTitleVisible])
 
   const [displayBg, setDisplayBg] = useState(false);
@@ -75,6 +78,7 @@ export default function Projects() {
           opacity: bgOpacity,
         }}
       ></div>
+      <div ref={refDeactiveMarker}>&nbsp;</div>
       <div className="projects-list" id="projects">
         {projects.map((project) => (
           <Project
@@ -84,23 +88,28 @@ export default function Projects() {
             image={project.image}
             color={project.color}
             textColor={project.textColor}
+            video={project.video}
           />
         ))}
       </div>
       <div className="shots" id="shots">
-        <div className="shots-title">
+        <div className={`shots-title ${isShotsTitleVisible ? "visible" : ""}`}>
           <h3 ref={refShots}>Shots</h3>
         </div>
-        <div className="shots-list">
+        <div className="shots-list" style={{ backgroundColor: isShotsTitleVisible ? 'magenta' : 'white' }}>
           <div className="shot">
             <div>
-              <img src="/image28.png" alt="Vulva digital illustration"/>
+              <img src="/image28.png" alt="Vulva digital illustration" />
               <span className="caption">Digital Illustration, 2022</span>
             </div>
           </div>
           <div className="shot">
             <div>
-              <img src="/abusivo.png" alt="relacionamento abusivo" ref={refVulva} />
+              <img
+                src="/relacionamento-abusivo.gif"
+                alt="relacionamento abusivo"
+                ref={refVulva}
+              />
               <span className="caption">
                 Digital Illustration and animation, 2016
               </span>

@@ -11,10 +11,12 @@
   flex-direction: column;
   text-transform: uppercase;
   font-size: 6em;
+
   // downsize in mobile
   @media (max-width: 768px) {
     font-size: 3em;
   }
+
   @media (max-width: 480px) {
     font-size: 2em;
   }
@@ -40,12 +42,17 @@
       letter-spacing: 0.12em;
     }
 
-    &.contact a {
-      display: flex;
-      flex-direction: row;
-      color: black;
-      font-weight: 600;
-      justify-content: space-between;
+    &.contact {
+      letter-spacing: -0.03em;
+
+      a {
+        display: flex;
+        flex-direction: row;
+        color: black;
+        font-weight: 600;
+        justify-content: space-between;
+        padding-right: 3px;
+      }
     }
 
     &.contact:hover {
@@ -53,7 +60,7 @@
     }
 
     &.contact img {
-      width: 0.6em;
+      width: 0.75em;
     }
   }
 }

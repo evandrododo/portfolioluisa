@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../styles/Lettering.scss";
+import LinkIcon from "./icons/LinkIcon";
 
 export default function Lettering() {
   return (
@@ -14,7 +15,7 @@ export default function Lettering() {
       <div className="line contact">
         <NavLink to="/information">
           <div>contact</div>
-          <img src="./circleright.svg" alt="circle right" />
+          <img src="./circleright3.svg" alt="circle right" />
         </NavLink>
       </div>
     </div>
