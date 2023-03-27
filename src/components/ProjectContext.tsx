@@ -27,6 +27,7 @@ const initialProjects: any[] = [
           description: `Percussion instrument, 2022 - Brazil\n \
            Dimensions: 26cm x 21cm x 26cm `,
           image: "/udu1.jpg",
+          containerSectionClass: "margin-bottom",
         },
         {
           title: "Maraca",
@@ -72,6 +73,7 @@ const initialProjects: any[] = [
               },
             },
           ],
+          containerSectionClass: "margin-bottom",
         },
         {
           title: "Gynandrus Plant",
@@ -84,8 +86,8 @@ const initialProjects: any[] = [
     },
   },
   {
-    id: "naturaldye",
-    title: "Natural Dye",
+    id: "naturaldyeing",
+    title: "Natural Dyeing",
     image: "./naturaldye.jpg",
     color: "#FF0000",
     details: {
@@ -93,7 +95,10 @@ const initialProjects: any[] = [
         {
           title: "Wall flags (in progress)",
           description: "Fabric dye with natural ink from plants and insects",
-          image: ["/flag1.png"],
+          image: [{
+            src: "/flag1.png",
+            caption: "Tye dye with cochineal pigment, 65x90cm"
+          }],
           containerImageStyle: {
             width: "100%",
             position: "relative",
@@ -103,7 +108,10 @@ const initialProjects: any[] = [
           },
         },
         {
-          image: ["/flag2.png"],
+          image: [{
+            src: "/flag2.png",
+            caption: "Sunlight with saffron and anatto pigment 75 x 120cm"
+          }],
           containerImageStyle: {
             width: "100%",
             position: "relative",
@@ -114,7 +122,10 @@ const initialProjects: any[] = [
           },
         },
         {
-          image: ["/flag3.png"],
+          image: [{
+            src: "/flag3.png",
+            caption: "Forest with alfafa pigment 65 x 90cm"
+          }],
           containerImageStyle: {
             width: "100%",
             position: "relative",
@@ -126,14 +137,24 @@ const initialProjects: any[] = [
         },
         {
           image: [
-            "/flag4.png",
+            {
+              src: "/flag4.png",
+              caption: "Sunlight with saffron and anatto pigment, 45 x 94cm",
+              customStyle: {
+                marginRight: "2rem",
+              },
+            },
             {
               src: "/flag5.png",
               customStyle: {
-                margin: "0 2rem",
+                marginRight: "2rem",
               },
+              caption: "Sunlight with anatto pigment, 45 x 80cm"
             },
-            "/flag6.png",
+            {
+              src: "/flag6.png",
+              caption: "Brazil with saffron and alfafa pigment, 40 x 80cm"
+            }
           ],
           containerImageStyle: {
             display: "flex",
@@ -144,7 +165,10 @@ const initialProjects: any[] = [
           },
         },
         {
-          image: ["/flag7.png"],
+          image: [{
+            src: "/flag7.png",
+            caption: "Heart in fire with cochineal and anatto pigment, 40 x 80cm"
+          }],
           containerImageStyle: {
             width: "100%",
             position: "relative",
@@ -155,7 +179,10 @@ const initialProjects: any[] = [
         },
         {
           image: [
-            "/flag8_wide.png",
+            {
+              src: "/flag8_wide.png",
+              caption: "Save the bears with alfafa pigment, 65x90cm",
+            },
             {
               src: "/flag9.png",
               customStyle: {
@@ -167,9 +194,10 @@ const initialProjects: any[] = [
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: "start",
             margin: "5rem 0",
           },
+          containerImageClass: "save-the-bears",
         },
       ],
     },
@@ -198,7 +226,7 @@ const initialProjects: any[] = [
     id: "videoart",
     title: "Video Art",
     image: "./videoart.png",
-    video: './videoart.webm',
+    video: "./videoart.webm",
     color: "#00FFFF",
     textColor: "#000000",
     details: {
@@ -257,23 +285,53 @@ const initialProjects: any[] = [
           embedVideo: (
             <>
               <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-              <iframe
-              style={{
+                <iframe
+                  style={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     width: "100%",
                     height: "100%",
                   }}
-                src="https://www.youtube.com/embed/89YOI9vFoUc"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+                  src="https://www.youtube.com/embed/89YOI9vFoUc"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
               </div>
             </>
           ),
+        },
+      ],
+    },
+  },
+  {
+    id: "phytotypes",
+    title: "Phytotypes",
+    image: "./phytotypes.png",
+    color: "#0000FF",
+    details: {
+      sections: [
+        {
+          title: "Project research",
+          description: `Phytotype experimentation: Historical
+          photograpy process and exemplifications
+          under orientation from the artist and
+          professor Andrea Bracher, 2013`,
+          image: [
+            "/phytotypes1.png",
+            "/phytotypes2.png",
+            "/phytotypes3.png",
+            "/phytotypes4.png",
+            "/phytotypes5.png",
+            "/phytotypes6.png",
+          ],
+          containerImageClass: "image-row",
+        },
+        {
+          image: ["/phytotypes7.png", "/phytotypes8.png"],
+          containerImageClass: "image-row image-row--center",
         },
       ],
     },
@@ -290,7 +348,7 @@ export const ProjectProvider = ({ children }: any) => {
     //   const response = await fetch("/api/projects");
     //   const data = await response.json();
     //   setProjects(data);
-      setLoading(false);
+    setLoading(false);
     // };
     // fetchProjects();
   }, []);

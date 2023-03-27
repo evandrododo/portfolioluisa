@@ -16,7 +16,7 @@ export default function Projects() {
   const isDeactiveMarkerVisible = useOnScreen(refDeactiveMarker);
 
   useEffect(() => {
-    if (isVulvaVisible || isDeactiveMarkerVisible) {
+    if ((isVulvaVisible && !isShotsTitleVisible) || isDeactiveMarkerVisible) {
       setProjectHovered(null)
     }
   }, [isVulvaVisible, isDeactiveMarkerVisible])
@@ -36,7 +36,6 @@ export default function Projects() {
 
   useEffect(() => {
     clearTimeout(timeoutId);
-    console.log("timeoutId", timeoutId);
     if (!projects || projects.length === 0) {
       return;
     }
@@ -56,8 +55,6 @@ export default function Projects() {
       console.log("bgOpacity", bgOpacity, loading);
       if (!loading) {
         setBgOpacity(0);
-        console.log("bgOpacity", bgOpacity);
-        console.log("hover false");
         const tid = setTimeout(() => {
           setDisplayBg(false);
         }, 2000);
@@ -80,6 +77,7 @@ export default function Projects() {
       ></div>
       <div ref={refDeactiveMarker}>&nbsp;</div>
       <div className="projects-list" id="projects">
+
         {projects.map((project) => (
           <Project
             key={project.id}

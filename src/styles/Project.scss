@@ -33,13 +33,13 @@
 
     video, img {
       max-width: 100%;
-      outline: 0px solid transparent;
+      outline: 2px solid transparent;
       transition: all 0.6s linear;
     }
 
     &:hover video,
     &:hover img {
-      outline-width: 10px;
+      outline-width: 13px;
     }
 
   }
@@ -55,6 +55,7 @@
     cursor: pointer;
 
     h4.project-title {
+      transition: all 1s ease;
       font-weight: 600;
       font-size: 4.6rem;
       max-width: 6em;
@@ -65,6 +66,11 @@
 
     a {
       color: white;
+      transition: all 1s ease;
+    }
+
+    svg {
+      transition: all 1s ease;
     }
 
     a video,

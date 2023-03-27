@@ -13,21 +13,30 @@ export default function Project({
   video,
   textColor = "white",
 }: any) {
-  const { setProjectHovered } = useContext(ProjectContext);
+  const { setProjectHovered, projectHovered } = useContext(ProjectContext);
   const [pointerInfo, setPointerInfo] = useState(false);
   const [timeoutId, setTimeoutId] = useState<any>(null);
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
 
-  const ref = useRef<HTMLImageElement>(null);
-  const isVisible = useOnScreen(ref);
+  const ref = useRef<HTMLDivElement>(null);
+  const refTitle = useRef<HTMLDivElement>(null);
+  const isImgVisible = useOnScreen(ref, {
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 1,
+  });
+  const isTitleVisible = useOnScreen(refTitle, {
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 1,
+  });
 
   const isMobile = window.innerWidth < 1200;
+  const isHovered = projectHovered === id;
 
   useEffect(() => {
-    if (isVisible && isMobile) {
+    if (isImgVisible && isTitleVisible && isMobile) {
       handleActiveProject(id);
     }
-  }, [isVisible]);
+  }, [isImgVisible, isTitleVisible]);
 
   const handleActiveProject = (id: any) => {
     clearTimeout(timeoutId);
@@ -46,8 +55,8 @@ export default function Project({
   };
 
   return (
-    <div className="project">
-      <div className="project-image">
+    <div className="project" id={id}>
+      <div className="project-image" ref={ref}>
         <NavLink to={`/projects/${id}`} style={{ display: "block" }}>
           {video ? (
             <video
@@ -77,7 +86,6 @@ export default function Project({
       </div>
       <NavLink to={`/projects/${id}`} className="title-link">
         <div
-          ref={ref}
           className="project-info"
           style={{
             opacity: infoOpacity,
@@ -88,13 +96,17 @@ export default function Project({
         >
           <h4
             className="project-title"
+            ref={refTitle}
             style={{
               color: textColor,
+              opacity: isImgVisible && isHovered ? 1 : 0,
             }}
           >
             {title}
           </h4>
-          <LinkIcon color={textColor} context="project" />
+            <LinkIcon color={textColor} context="project" style={{
+              opacity: isImgVisible && isHovered ? 1 : 0,
+            }}/>
         </div>
       </NavLink>
     </div>

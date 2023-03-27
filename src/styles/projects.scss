@@ -42,7 +42,7 @@
 
   .description {
     font-size: 0.8rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     font-weight: 300;
   }
 
@@ -82,7 +82,7 @@
   text-align: center;
 
   .shots-title {
-    margin: 0 0 0 0;
+    margin: 10em 0 0 0;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -168,7 +168,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
   width: 100%;
   margin: 1rem 0;
@@ -180,7 +180,35 @@
   }
 }
 
+.image-row--center {
+  justify-content: center;
+}
 
+.margin-bottom {
+  margin-bottom: 5rem;
+}
+
+
+@media (max-width: 1200px) {
+  #naturaldyeing {
+
+    .container-image {
+      justify-content: center !important;
+      margin-top: 0em !important;
+      align-items: center !important;
+      flex-direction: column !important;
+      &.save-the-bears {
+        flex-direction: column-reverse !important;
+        img {
+          margin: 0 !important;
+        }
+      }
+      .caption-container {
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
 @media (max-width: 768px) {
 
   .shots {
@@ -210,11 +238,13 @@
       }
     }
 
-    .image-row {
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: center;
-      flex-wrap: nowrap;
-    }
   }
+  .shots .image-row,
+  .image-row {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
 }

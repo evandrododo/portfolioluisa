@@ -2,6 +2,7 @@ const LinkIcon = ({
   color = "currentColor",
   className = "",
   context = "",
+  style = {},
 }: any) => {
   switch (context) {
     //lettering
@@ -13,6 +14,7 @@ const LinkIcon = ({
           viewBox="0 0 64 65"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          style={style}
         >
           <rect
             x="2.76469"
@@ -38,6 +40,7 @@ const LinkIcon = ({
           viewBox="0 0 80 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          style={style}
         >
           <rect
             x="2.29301"
@@ -64,6 +67,7 @@ const LinkIcon = ({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
+          style={style}
         >
           <rect
             x="2.29301"

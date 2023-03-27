@@ -7,7 +7,6 @@ import "../styles/projects.scss";
 
 export async function loaderProject({ params }: any) {
   const id = params.id;
-  console.log("id project", id);
   return { id };
 }
 export default function ProjectPage() {
@@ -34,11 +33,11 @@ export default function ProjectPage() {
       >
         <Container className="project-detail">{project.title}</Container>
       </h1>
-      <Container className="project-detail">
+      <Container className="project-detail" id={id}>
         <div>
           {project.details &&
             project.details.sections.map((section: any) => (
-              <div key={section.title}>
+              <div key={section.title} className={section.containerSectionClass ? section.containerSectionClass : "section"}>
                 {section.title && <h2>{section.title}</h2>}
                 {section.description && (
                   <div className="description">{section.description}</div>
@@ -46,20 +45,22 @@ export default function ProjectPage() {
                 {section.image && typeof section.image !== "string" && (
                   <div
                     style={section.containerImageStyle}
-                    className={section.containerImageClass}
+                    className={`${section.containerImageClass || ''} container-image`}
                   >
                     {section.image.map((image: any) => {
                       if (typeof image === "object") {
                         return (
                           <>
-                            <img
-                              src={image.src}
-                              alt={section.title}
-                              style={image.customStyle}
-                            />
-                            {image.caption && (
-                              <div className="caption">{image.caption}</div>
-                            )}
+                            <div className="caption-container">
+                              <img
+                                src={image.src}
+                                alt={section.title}
+                                style={image.customStyle}
+                              />
+                              {image.caption && (
+                                <div className="caption">{image.caption}</div>
+                              )}
+                            </div>
                           </>
                         );
                       }
