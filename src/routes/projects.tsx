@@ -93,7 +93,10 @@ export default function Projects() {
         <div className={`shots-title ${isShotsTitleVisible ? "visible" : ""}`}>
           <h3 ref={refShots}>Shots</h3>
         </div>
-        <div className="shots-list" style={{ backgroundColor: isShotsTitleVisible ? 'magenta' : 'white' }}>
+        <div
+          className="shots-list"
+          style={{ backgroundColor: isShotsTitleVisible ? "magenta" : "white" }}
+        >
           <div className="shot">
             <div>
               <img src="/image28.png" alt="Vulva digital illustration" />
@@ -118,12 +121,27 @@ export default function Projects() {
               <img src="/cyanotype2.png" alt="foto azul 2" />
               <img src="/cyanotype3.png" alt="foto azul 3" />
             </div>
-            <span className="caption">Cianotype, 2012</span>
+            <span className="caption full-width">Cianotype, 2012</span>
           </div>
           <div className="shot left">
             <div>
               <img src="/typedesign.png" alt="typedesign" />
               <span className="caption">Type design, 2015</span>
+            </div>
+          </div>
+          <div className="shot">
+            <div className="typography">
+              <div className="img-container">
+                <img
+                  src="/shots_typo1.png"
+                  alt="typography experimentation 1"
+                />
+                <img
+                  src="/shots_typo2.png"
+                  alt="typography experimentation 2"
+                />
+              </div>
+              <span className="caption">Typography experimentation, 2015</span>
             </div>
           </div>
           <div className="shot right">
@@ -136,6 +154,12 @@ export default function Projects() {
             <div>
               <img src="/tilda.png" alt="ser de luz" />
               <span className="caption">Digital illustration, 2021</span>
+            </div>
+          </div>
+          <div className="shot">
+            <div>
+              <img src="/shots_last.png" alt="sticker" />
+              <span className="caption">Sticker illustration, 2013</span>
             </div>
           </div>
         </div>
