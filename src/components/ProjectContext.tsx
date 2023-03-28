@@ -95,10 +95,12 @@ const initialProjects: any[] = [
         {
           title: "Wall flags (in progress)",
           description: "Fabric dye with natural ink from plants and insects",
-          image: [{
-            src: "/flag1.png",
-            caption: "Tye dye with cochineal pigment, 65x90cm"
-          }],
+          image: [
+            {
+              src: "/flag1.png",
+              caption: "Tye dye with cochineal pigment, 65x90cm",
+            },
+          ],
           containerImageStyle: {
             width: "100%",
             position: "relative",
@@ -108,10 +110,12 @@ const initialProjects: any[] = [
           },
         },
         {
-          image: [{
-            src: "/flag2.png",
-            caption: "Sunlight with saffron and anatto pigment 75 x 120cm"
-          }],
+          image: [
+            {
+              src: "/flag2.png",
+              caption: "Sunlight with saffron and anatto pigment 75 x 120cm",
+            },
+          ],
           containerImageStyle: {
             width: "100%",
             position: "relative",
@@ -122,10 +126,12 @@ const initialProjects: any[] = [
           },
         },
         {
-          image: [{
-            src: "/flag3.png",
-            caption: "Forest with alfafa pigment 65 x 90cm"
-          }],
+          image: [
+            {
+              src: "/flag3.png",
+              caption: "Forest with alfafa pigment 65 x 90cm",
+            },
+          ],
           containerImageStyle: {
             width: "100%",
             position: "relative",
@@ -149,12 +155,12 @@ const initialProjects: any[] = [
               customStyle: {
                 marginRight: "2rem",
               },
-              caption: "Sunlight with anatto pigment, 45 x 80cm"
+              caption: "Burning sun with anatto pigment, 45 x 80cm",
             },
             {
               src: "/flag6.png",
-              caption: "Brazil with saffron and alfafa pigment, 40 x 80cm"
-            }
+              caption: "Brazil with saffron and alfafa pigment, 40 x 80cm",
+            },
           ],
           containerImageStyle: {
             display: "flex",
@@ -165,10 +171,13 @@ const initialProjects: any[] = [
           },
         },
         {
-          image: [{
-            src: "/flag7.png",
-            caption: "Heart in fire with cochineal and anatto pigment, 40 x 80cm"
-          }],
+          image: [
+            {
+              src: "/flag7.png",
+              caption:
+                "Heart in fire with cochineal and anatto pigment, 40 x 80cm",
+            },
+          ],
           containerImageStyle: {
             width: "100%",
             position: "relative",
@@ -234,6 +243,7 @@ const initialProjects: any[] = [
         {
           title: "The illusion run",
           description: `Written and directed by Luisa Kuhn`,
+          containerSectionClass: "margin-bottom",
           embedVideo: (
             <>
               <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
@@ -258,6 +268,7 @@ const initialProjects: any[] = [
         {
           title: "Lie of the day",
           description: "Written and directed by Luisa Kuhn and Luiza Schneider",
+          containerSectionClass: "margin-bottom",
           embedVideo: (
             <>
               <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
@@ -281,7 +292,8 @@ const initialProjects: any[] = [
         },
         {
           title: "Feel it",
-          description: "Written and directed by Luisa Kuhn",
+          description: `Written and directed by Luisa Kuhn
+Exhibited at an art festival called “Art All Night - Trenton: 6th Annual Film Festival” in Trenton, New Jersey, United States.`,
           embedVideo: (
             <>
               <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>

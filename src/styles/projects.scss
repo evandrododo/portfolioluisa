@@ -191,18 +191,20 @@
 
 @media (max-width: 1200px) {
   #naturaldyeing {
-
     .container-image {
       justify-content: center !important;
       margin-top: 0em !important;
       align-items: center !important;
       flex-direction: column !important;
+
       &.save-the-bears {
         flex-direction: column-reverse !important;
+
+      }
         img {
           margin: 0 !important;
         }
-      }
+
       .caption-container {
         margin-bottom: 2em;
       }
@@ -211,7 +213,14 @@
 }
 @media (max-width: 768px) {
 
+  .project-title {
+    font-size: 2.5em;
+  }
   .shots {
+    .shots-title h3 {
+      font-size: 3.5rem;
+    }
+
     .shot {
       padding: 1em;
       box-sizing: border-box;
@@ -239,6 +248,7 @@
     }
 
   }
+
   .shots .image-row,
   .image-row {
     flex-direction: column;

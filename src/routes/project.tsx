@@ -30,6 +30,7 @@ export default function ProjectPage() {
           padding: "3em 0 2em",
           fontWeight: 600,
         }}
+        className="project-title"
       >
         <Container className="project-detail">{project.title}</Container>
       </h1>

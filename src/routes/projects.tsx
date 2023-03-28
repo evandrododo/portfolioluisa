@@ -77,7 +77,6 @@ export default function Projects() {
       ></div>
       <div ref={refDeactiveMarker}>&nbsp;</div>
       <div className="projects-list" id="projects">
-
         {projects.map((project) => (
           <Project
             key={project.id}
