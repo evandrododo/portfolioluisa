@@ -348,6 +348,21 @@ Exhibited at an art festival called “Art All Night - Trenton: 6th Annual Film 
       ],
     },
   },
+  {
+    id: "books",
+    title: "Books",
+    image: "./books.png",
+    color: "#FF0000",
+    details: {
+      sections: [
+        {
+          title: "Rebeca: It's fun to imagine",
+          description: `Writen and illustrated under orientation of Joseane Rücker. In process of publishing by Editora Urutau`,
+          image: 'rebeca.gif'
+        }
+      ]
+    }
+  }
 ];
 
 export const ProjectProvider = ({ children }: any) => {
