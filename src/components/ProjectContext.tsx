@@ -49,22 +49,31 @@ const initialProjects: any[] = [
       sections: [
         {
           title: "Vulva",
-          description: `Illustration and sculpture in ceramics, 2022 - Brazil\n \
-           _Ode. Looking for balance_`,
+          description: (
+            <>
+              Illustration and sculpture in ceramics, 2022 - Brazil
+              <br />
+              <i>Ode. Looking for balance</i>
+            </>
+          ),
           image: [
             {
               src: "/vulva1.png",
-              customStyle: {
+              captionContainerStyle: {
                 width: "64.8%",
                 marginRight: "0.9%",
               },
             },
             {
               src: "/vulva2.png",
-              customStyle: {
+              captionContainerStyle: {
                 width: "34.3%",
               },
             },
+          ],
+        },
+        {
+          image: [
             {
               src: "/vulva3.png",
               caption: "Dimensions: 33 x 15cm",
@@ -73,7 +82,7 @@ const initialProjects: any[] = [
               },
             },
           ],
-          containerSectionClass: "margin-bottom",
+          containerSectionClass: "section margin-bottom",
         },
         {
           title: "Gynandrus Plant",
@@ -358,11 +367,33 @@ Exhibited at an art festival called “Art All Night - Trenton: 6th Annual Film 
         {
           title: "Rebeca: It's fun to imagine",
           description: `Writen and illustrated under orientation of Joseane Rücker. In process of publishing by Editora Urutau`,
-          image: 'rebeca.gif'
-        }
-      ]
-    }
-  }
+          image: ["./rebeca1.gif"]
+        },
+        {
+          title: "The Book of each One's Colours",
+          description: "Idealized and handmade by Luisa Kuhn and Joel Nunes",
+          image: ["./books2.gif"]
+        },
+        {
+          image: [
+            "/books3.png",
+            "/books4.png",
+          ]
+        },
+        {
+          image: [
+            "/books5.png",
+            "/books6.png",
+          ]
+        },
+        {
+          image: [
+            "/books7.png",
+          ]
+        },
+      ],
+    },
+  },
 ];
 
 export const ProjectProvider = ({ children }: any) => {

@@ -52,7 +52,10 @@ export default function ProjectPage() {
                       if (typeof image === "object") {
                         return (
                           <>
-                            <div className="caption-container">
+                            <div
+                              className="caption-container"
+                              style={image.captionContainerStyle}
+                            >
                               <img
                                 src={image.src}
                                 alt={section.title}

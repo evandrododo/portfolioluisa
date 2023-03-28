@@ -4,7 +4,7 @@ import "../styles/TopBar.scss";
 import { ProjectContext } from "./ProjectContext";
 import { useContext, useState } from "react";
 import Menu from "./icons/Menu";
-import { NavLink } from "react-router-dom";
+import { NavLink, ScrollRestoration } from "react-router-dom";
 import LinkIcon from "./icons/LinkIcon";
 import { Close } from "./icons/Close";
 
@@ -47,6 +47,7 @@ export default function TopBar({ changeColor = false }) {
 
   return (
     <div className={className} style={style}>
+      <ScrollRestoration />
       <PagesMenu
         isMobile={isMobile}
         activeMobileMenu={activeMobileMenu}

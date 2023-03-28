@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   createHashRouter,
   RouterProvider,
+  ScrollRestoration,
 } from "react-router-dom";
 import "./styles/index.scss";
 import Projects from "./routes/projects";

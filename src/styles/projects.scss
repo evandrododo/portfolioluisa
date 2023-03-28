@@ -189,6 +189,46 @@
   margin-bottom: 5rem;
 }
 
+/* Project specific styles */
+
+#sculpture {
+  img {
+    max-width: 100%;
+  }
+
+  .caption-container {
+    float: left;
+  }
+  .section {
+    display: inline-block;
+  }
+}
+
+#books {
+
+  img {
+    max-width: 100%;
+  }
+  .section {
+    width: 100%;
+  }
+  .container-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0em;
+    align-items: center;
+    flex-direction: row;
+  }
+  .caption-container {
+    float: left;
+  }
+  .section {
+    display: inline-block;
+  }
+}
+
+/* Breakpoints */
 
 @media (max-width: 1200px) {
   #naturaldyeing {
@@ -209,6 +249,12 @@
       .caption-container {
         margin-bottom: 2em;
       }
+    }
+  }
+
+  #books {
+    .container-image {
+      flex-direction: column;
     }
   }
 }
