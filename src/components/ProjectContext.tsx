@@ -229,13 +229,34 @@ const initialProjects: any[] = [
     details: {
       sections: [
         {
-          image: "/utilityceramics1.png",
+          image: [
+            {
+              src: "/utilityceramics1.png",
+            }
+          ],
+          containerSectionClass: "section margin-bottom",
+        
         },
         {
-          image: "/utilityceramics2.png",
+          containerSectionClass: "section margin-bottom",
+          image:[
+            {
+              src: "/utilityceramics2.png",
+              caption: "Plate, 15 x 15 cm",
+            }
+          ],
+          containerImageStyle: {
+            textAlign: "center",
+          }
         },
         {
-          image: "/utilityceramics3.png",
+          containerSectionClass: "section margin-bottom",
+          image:[
+            {
+              src: "/utilityceramics3.png",
+              caption: "Plate, 16 x 10 cm",
+            }
+          ]
         },
       ],
     },

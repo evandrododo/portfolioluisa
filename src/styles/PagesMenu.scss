@@ -94,6 +94,32 @@
   }
 }
 
+.uxcases {
+  a {
+    text-decoration: underline;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      margin-right: 0.5em;
+    }
+    color: inherit;
+    &:hover {
+      color: magenta;
+      transition: all 0.2s;
+    }
+  }
+  margin-left: auto;
+  &.mobile {
+    position: absolute;
+    top: 4.3rem;
+    right: 3.7rem;
+    margin: 0;
+    z-index: 2  ;
+  }
+}
+
 @media (max-width: 768px) {
   .logo {
     margin: 1em 1em 1em 0;
