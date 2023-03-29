@@ -26,7 +26,7 @@ export default function Project({
   });
   const isTitleVisible = useOnScreen(refTitle, {
     rootMargin: "0px 0px 0px 0px",
-    threshold: 1,
+    threshold: 0.5,
   });
 
   const isMobile = window.innerWidth < 1200;

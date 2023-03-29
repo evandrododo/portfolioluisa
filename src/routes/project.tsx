@@ -80,8 +80,8 @@ export default function ProjectPage() {
             ))}
         </div>
         <div className="center">
-          <NavLink to="/">
-            <LinkIcon />
+          <NavLink to={`/#${id}`}>
+            <LinkIcon context="left" />
           </NavLink>
         </div>
       </Container>
