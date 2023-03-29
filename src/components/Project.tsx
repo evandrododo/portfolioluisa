@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
+import useScrollSnap from "../hooks/useScrollSnap";
 import "../styles/Project.scss";
 import useOnScreen from "../utils";
 import LinkIcon from "./icons/LinkIcon";
@@ -18,6 +19,8 @@ export default function Project({
   const [timeoutId, setTimeoutId] = useState<any>(null);
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
 
+  const scrollRef = useRef(null);
+  useScrollSnap({ ref: scrollRef, duration: 2000, delay: 0 });
   const ref = useRef<HTMLDivElement>(null);
   const refTitle = useRef<HTMLDivElement>(null);
   const isImgVisible = useOnScreen(ref, {
@@ -55,7 +58,7 @@ export default function Project({
   };
 
   return (
-    <div className="project" id={id}>
+    <div className="project" id={id} ref={scrollRef}>
       <div className="project-image" ref={ref}>
         <NavLink to={`/projects/${id}`} style={{ display: "block" }}>
           {video ? (
@@ -104,9 +107,13 @@ export default function Project({
           >
             {title}
           </h4>
-            <LinkIcon color={textColor} context="project" style={{
+          <LinkIcon
+            color={textColor}
+            context="project"
+            style={{
               opacity: isImgVisible && isHovered ? 1 : 0,
-            }}/>
+            }}
+          />
         </div>
       </NavLink>
     </div>
