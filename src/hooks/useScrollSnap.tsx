@@ -11,7 +11,7 @@ interface UseScrollSnapOptions {
 function useScrollSnap({
   ref = null,
   duration = 100,
-  delay = 50,
+  delay = 0,
 }: UseScrollSnapOptions) {
   const isActiveInteractionRef = useRef(false);
   const scrollTimeoutRef = useRef<number | null>(null);
@@ -49,7 +49,6 @@ function useScrollSnap({
     ) as HTMLElement[];
     return elements.filter((element) => {
       const { top, height } = element.getBoundingClientRect();
-      console.log(element, 'top', top, 'height', height, 'window.innerHeight', window.innerHeight)
       return (
         top > 0 && top < window.innerHeight && top + height < window.innerHeight
       );
@@ -75,7 +74,6 @@ function useScrollSnap({
       if (index === -1) return;
 
       setScrollIndex(index);
-      console.log('index', index, 'target', target)
       targetScrollOffsetRef.current = getTargetScrollOffset(target);
       animationRef.current = new Tweezer({
         start: 0,
