@@ -82,6 +82,7 @@
   .information {
     flex-direction: column;
 
+    padding: 0;
     .photo {
       padding: 0rem 0 0;
 
@@ -104,7 +105,7 @@
 
   }
   .contactinfo {
-    padding: 2rem ;
+    padding: 1.5rem 0 2.5rem;
     font-size: 1rem;
     .socialmedia svg {
       width: 1.5rem;

@@ -13,27 +13,33 @@ export default function Information() {
         </div>
         <div className="text">
           <p className="description">
-            Luisa Kuhn é uma profissional altamente criativa e inovadora, capaz
-            de aplicar seus conhecimentos em artes visuais no processo de design
-            de interfaces de usuário. Além de possuir habilidades em design de
-            interação e experiência do usuário, esta designer tem um olhar único
-            e sensível para as texturas, padrões, cores e formas.
+            Meet Luisa, a designer who brings a unique perspective to every
+            project she works on thanks to her diverse range of artistic skills.
+            While she has a deep passion for UX design, Luisa has also worked
+            with video art, book production, ceramics, and other hands-on
+            crafts. This combination of artistic pursuits allows her to bring a
+            fresh and creative approach to every project she takes on.
           </p>
           <p className="description">
-            Sua capacidade de visualizar e criar padrões estéticos únicos é um
-            ativo valioso no processo de desenvolvimento de interfaces de
-            usuário. A designer pode usar sua experiência em artes visuais para
-            projetar interfaces intuitivas e agradáveis, que são tanto
-            funcionais quanto visualmente atraentes. Através da aplicação de
-            técnicas de cerâmica e tecido, ela pode criar mockups e protótipos
-            para testar ideias e conceitos, permitindo que o processo de design
-            iterativo progrida rapidamente.
+            Luisa's approach to design is centered around the user, with a deep
+            understanding of their needs and motivations. She believes that
+            design should be accessible and inclusive, and is committed to
+            creating solutions that are both beautiful and intuitive. Her
+            dedication to user-centered design ensures that every detail is
+            carefully considered, resulting in experiences that are not only
+            visually stunning but also highly functional. Luisa's artistic
+            skills allow her to bring ideas to life in a way that engages and
+            delights users.
           </p>
           <p className="description">
-            A UX designer com experiência em artes é uma profissional altamente
-            versátil e adaptável, capaz de trabalhar em diferentes projetos e
-            equipes, e sua abordagem única e criativa para o design é um grande
-            trunfo em qualquer equipe de desenvolvimento.
+            What makes Luisa truly special is her ability to bring a fresh and
+            creative perspective to every project she takes on, thanks to her
+            diverse range of artistic skills. Her dedication to user-centered
+            design ensures that every detail is carefully considered, resulting
+            in experiences that are not only visually stunning but also highly
+            functional. Luisa's hands-on approach to art and design allows her
+            to create experiences that engage and delight users, making her a
+            valuable asset to any creative team.
           </p>
         </div>
       </div>
