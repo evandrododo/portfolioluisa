@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import Lettering from "../components/Lettering";
 import Project from "../components/Project";
 import { ProjectContext, ProjectsState } from "../components/ProjectContext";
+import useScrollSnap from "../hooks/useScrollSnap";
 import "../styles/projects.scss";
 import useOnScreen from "../utils";
 
@@ -9,25 +10,24 @@ export default function Projects() {
   const { projectHovered, setProjectHovered, projects, loading } =
     useContext<ProjectsState>(ProjectContext);
   const refShots = useRef<HTMLHeadingElement>(null);
+  const refScrollShots = useRef(null);
   const refVulva = useRef<HTMLImageElement>(null);
   const refDeactiveMarker = useRef<HTMLDivElement>(null);
+  
+  useScrollSnap({ ref: refScrollShots, duration: 2000, delay: 0 });
   const isShotsTitleVisible = useOnScreen(refShots);
   const isVulvaVisible = useOnScreen(refVulva);
   const isDeactiveMarkerVisible = useOnScreen(refDeactiveMarker);
 
   useEffect(() => {
+    console.log("isShotsTitleVisible", isShotsTitleVisible, "isVulvaVisible", isVulvaVisible, "isDeactiveMarkerVisible", isDeactiveMarkerVisible)
+    if (isShotsTitleVisible) {
+      setProjectHovered('sculpture')
+    } 
     if ((isVulvaVisible && !isShotsTitleVisible) || isDeactiveMarkerVisible) {
       setProjectHovered(null)
     }
-  }, [isVulvaVisible, isDeactiveMarkerVisible])
-
-  useEffect(() => {
-    if (isShotsTitleVisible) {
-      setProjectHovered('sculpture')
-    } else {
-      setProjectHovered(null)
-    }
-  }, [isShotsTitleVisible])
+  }, [isVulvaVisible, isDeactiveMarkerVisible, isShotsTitleVisible])
 
   const [displayBg, setDisplayBg] = useState(false);
   const [bgColor, setBgColor] = useState<any>(null);
@@ -90,7 +90,7 @@ export default function Projects() {
         ))}
       </div>
       <div className="shots" id="shots">
-        <div className={`shots-title ${isShotsTitleVisible ? "visible" : ""}`}>
+        <div className={`shots-title ${isShotsTitleVisible ? "visible" : ""}`} ref={refScrollShots}>
           <h3 ref={refShots}>Shots</h3>
         </div>
         <div

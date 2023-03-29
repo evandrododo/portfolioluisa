@@ -82,7 +82,7 @@
   text-align: center;
 
   .shots-title {
-    margin: 10em 0 0 0;
+    margin: 5em 0 2em 0;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -343,4 +343,14 @@
     flex-wrap: nowrap;
   }
 
+  #videoart.project {
+    padding-bottom: 5em;
+  }
+  #phytotypes.project {
+    padding-bottom: 5em;
+  }
+  #books.project {
+    padding-top: 6em;
+    padding-bottom: 1em;
+  }
 }

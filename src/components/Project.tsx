@@ -19,12 +19,11 @@ export default function Project({
   const [timeoutId, setTimeoutId] = useState<any>(null);
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
 
-  const scrollRef = useRef(null);
-  useScrollSnap({ ref: scrollRef, duration: 2000, delay: 0 });
   const ref = useRef<HTMLDivElement>(null);
+  useScrollSnap({ ref: ref, duration: 2000, delay: 0 });
   const refTitle = useRef<HTMLDivElement>(null);
   const isImgVisible = useOnScreen(ref, {
-    rootMargin: "0px 0px 0px 0px",
+    rootMargin: "-100px 0px 0px 0px",
     threshold: 1,
   });
   const isTitleVisible = useOnScreen(refTitle, {
@@ -36,6 +35,7 @@ export default function Project({
   const isHovered = projectHovered === id;
 
   useEffect(() => {
+    console.log(id, "isImgVisible", isImgVisible, "isTitleVisible", isTitleVisible)
     if (isImgVisible && isTitleVisible && isMobile) {
       handleActiveProject(id);
     }
@@ -58,7 +58,7 @@ export default function Project({
   };
 
   return (
-    <div className="project" id={id} ref={scrollRef}>
+    <div className="project" id={id}>
       <div className="project-image" ref={ref}>
         <NavLink to={`/projects/${id}`} style={{ display: "block" }}>
           {video ? (
