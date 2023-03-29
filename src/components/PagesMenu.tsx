@@ -5,6 +5,7 @@ import { HashLink } from "react-router-hash-link";
 import Menu from "./icons/Menu";
 import LinkIcon from "./icons/LinkIcon";
 import { Close } from "./icons/Close";
+import { ExternalLink } from "./icons/ExternalLink";
 
 const PagesMenu = ({
   isMobile,
@@ -30,10 +31,18 @@ const PagesMenu = ({
         <div
           className={`pages ${isMobile && activeMobileMenu ? "active" : ""}`}
         >
-          <HashLink smooth to={`/#projects`} onClick={() => setActiveMobileMenu(false)}>
+          <HashLink
+            smooth
+            to={`/#projects`}
+            onClick={() => setActiveMobileMenu(false)}
+          >
             projects
           </HashLink>
-          <HashLink smooth to={`/#shots`} onClick={() => setActiveMobileMenu(false)}>
+          <HashLink
+            smooth
+            to={`/#shots`}
+            onClick={() => setActiveMobileMenu(false)}
+          >
             shots
           </HashLink>
           <NavLink
@@ -46,6 +55,15 @@ const PagesMenu = ({
           </NavLink>
           {isMobile && activeMobileMenu && (
             <>
+              <div className="uxcases mobile">
+                <a
+                  href="https://luisakuhn.notion.site/luisakuhn/Luisa-Kuhn-fa144159cb1c4182ac97beed84b62440"
+                  target="_blank"
+                >
+                  <span>UX Cases</span>
+                  <ExternalLink />
+                </a>
+              </div>
               <NavLink
                 to={`/`}
                 className={"return-button"}
@@ -62,6 +80,17 @@ const PagesMenu = ({
             </>
           )}
         </div>
+        {!isMobile && (
+          <div className="uxcases">
+            <a
+              href="https://luisakuhn.notion.site/luisakuhn/Luisa-Kuhn-fa144159cb1c4182ac97beed84b62440"
+              target="_blank"
+            >
+              <span>UX Cases</span>
+              <ExternalLink />
+            </a>
+          </div>
+        )}
       </div>
     </>
   );
