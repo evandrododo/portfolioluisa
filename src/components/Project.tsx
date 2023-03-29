@@ -20,7 +20,7 @@ export default function Project({
   const [infoOpacity, setInfoOpacity] = useState<any>(0);
 
   const ref = useRef<HTMLDivElement>(null);
-  useScrollSnap({ ref: ref, duration: 2000, delay: 0 });
+  useScrollSnap({ ref: ref, duration: 500, delay: 0 });
   const refTitle = useRef<HTMLDivElement>(null);
   const isImgVisible = useOnScreen(ref, {
     rootMargin: "-100px 0px 0px 0px",

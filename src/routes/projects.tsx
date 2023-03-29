@@ -14,7 +14,7 @@ export default function Projects() {
   const refVulva = useRef<HTMLImageElement>(null);
   const refDeactiveMarker = useRef<HTMLDivElement>(null);
   
-  useScrollSnap({ ref: refScrollShots, duration: 2000, delay: 0 });
+  useScrollSnap({ ref: refScrollShots, duration: 1500, delay: 0 });
   const isShotsTitleVisible = useOnScreen(refShots);
   const isVulvaVisible = useOnScreen(refVulva);
   const isDeactiveMarkerVisible = useOnScreen(refDeactiveMarker);

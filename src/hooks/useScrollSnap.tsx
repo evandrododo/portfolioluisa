@@ -59,7 +59,7 @@ function useScrollSnap({
   const getTargetScrollOffset = useCallback((element: HTMLElement) => {
     const { top } = element.getBoundingClientRect();
     // add offset with half of the element size to center it
-    return window.pageYOffset + top - 150;
+    return window.pageYOffset + top - (window.innerHeight - element.clientHeight) / 2;
   }, []);
 
   const snapToTarget = useCallback(
