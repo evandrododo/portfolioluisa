@@ -57,8 +57,13 @@ function useScrollSnap({
 
   const getTargetScrollOffset = useCallback((element: HTMLElement) => {
     const { top } = element.getBoundingClientRect();
+    const menuSize = document.querySelector('.group-pages')?.clientHeight + 10;
+
+    let marginTop = (window.innerHeight - element.clientHeight) / 2;
+    if (marginTop < menuSize) marginTop = menuSize;
     // add offset with half of the element size to center it
-    return window.pageYOffset + top - (window.innerHeight - element.clientHeight) / 2;
+    const offset =  window.pageYOffset + top - marginTop;
+    return offset;
   }, []);
 
   const snapToTarget = useCallback(
@@ -94,7 +99,6 @@ function useScrollSnap({
     currentScrollOffsetRef.current = window.pageYOffset;
 
     const elementsInView = getElementsInView();
-    console.log(elementsInView.length, 'elementsInView')
     if (!elementsInView || elementsInView.length === 0) return;
 
     if (deltaY > 0) {

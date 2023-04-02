@@ -415,6 +415,12 @@ Exhibited at an art festival called “Art All Night - Trenton: 6th Annual Film 
       ],
     },
   },
+    {
+      id: "shots",
+      display: false,
+      color: "magenta"
+
+    }
 ];
 
 export const ProjectProvider = ({ children }: any) => {

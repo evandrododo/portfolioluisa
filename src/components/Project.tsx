@@ -36,6 +36,9 @@ export default function Project({
 
   useEffect(() => {
     console.log(id, "isImgVisible", isImgVisible, "isTitleVisible", isTitleVisible)
+    if( isImgVisible && isTitleVisible && !isMobile && projectHovered === 'shots') {
+      handleActiveProject("");
+    }
     if (isImgVisible && isTitleVisible && isMobile) {
       handleActiveProject(id);
     }

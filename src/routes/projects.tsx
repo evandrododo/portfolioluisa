@@ -20,9 +20,10 @@ export default function Projects() {
   const isDeactiveMarkerVisible = useOnScreen(refDeactiveMarker);
 
   useEffect(() => {
+    console.log('project hovered', projectHovered)
     console.log("isShotsTitleVisible", isShotsTitleVisible, "isVulvaVisible", isVulvaVisible, "isDeactiveMarkerVisible", isDeactiveMarkerVisible)
     if (isShotsTitleVisible) {
-      setProjectHovered('sculpture')
+      setProjectHovered('shots')
     } 
     if ((isVulvaVisible && !isShotsTitleVisible) || isDeactiveMarkerVisible) {
       setProjectHovered(null)
@@ -77,20 +78,28 @@ export default function Projects() {
       ></div>
       <div ref={refDeactiveMarker}>&nbsp;</div>
       <div className="projects-list" id="projects">
-        {projects.map((project) => (
-          <Project
-            key={project.id}
-            id={project.id}
-            title={project.title}
-            image={project.image}
-            color={project.color}
-            textColor={project.textColor}
-            video={project.video}
-          />
-        ))}
+        {projects.map((project) => {
+          if (project.display === false) {
+            return;
+          }
+          return (
+            <Project
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              image={project.image}
+              color={project.color}
+              textColor={project.textColor}
+              video={project.video}
+            />
+          );
+        })}
       </div>
       <div className="shots" id="shots">
-        <div className={`shots-title ${isShotsTitleVisible ? "visible" : ""}`} ref={refScrollShots}>
+        <div
+          className={`shots-title ${isShotsTitleVisible ? "visible" : ""}`}
+          ref={refScrollShots}
+        >
           <h3 ref={refShots}>Shots</h3>
         </div>
         <div
