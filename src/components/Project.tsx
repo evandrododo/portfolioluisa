@@ -105,7 +105,7 @@ export default function Project({
             ref={refTitle}
             style={{
               color: textColor,
-              opacity: isImgVisible && isHovered ? 1 : 0,
+              opacity: (isImgVisible || isTitleVisible) && isHovered ? 1 : 0,
             }}
           >
             {title}
@@ -114,7 +114,7 @@ export default function Project({
             color={textColor}
             context="project"
             style={{
-              opacity: isImgVisible && isHovered ? 1 : 0,
+              opacity: (isImgVisible || isTitleVisible) && isHovered ? 1 : 0,
             }}
           />
         </div>

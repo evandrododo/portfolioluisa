@@ -11,7 +11,7 @@ interface UseScrollSnapOptions {
 function useScrollSnap({
   ref = null,
   duration = 100,
-  delay = 0,
+  delay = 1000,
 }: UseScrollSnapOptions) {
   const isActiveInteractionRef = useRef(false);
   const scrollTimeoutRef = useRef<number | null>(null);
@@ -19,6 +19,8 @@ function useScrollSnap({
   const targetScrollOffsetRef = useRef<number | null>(null);
   const animationRef = useRef<Tweezer | null>(null);
   const [scrollIndex, setScrollIndex] = useState(0);
+
+  const [timeoutId, setTimeoutId] = useState(0);
 
   const tickAnimation = useCallback((value: number) => {
     if (!targetScrollOffsetRef.current || !currentScrollOffsetRef.current)
@@ -101,21 +103,31 @@ function useScrollSnap({
     const elementsInView = getElementsInView();
     if (!elementsInView || elementsInView.length === 0) return;
 
-    if (deltaY > 0) {
-      snapToTarget(elementsInView[elementsInView.length - 1]);
-    } else {
-      snapToTarget(elementsInView[0]);
-    }
+
+      if (deltaY > 0) {
+        snapToTarget(elementsInView[elementsInView.length - 1]);
+      } else {
+        snapToTarget(elementsInView[0]);
+      }
   }, [getElementsInView, snapToTarget]);
 
   const onInteractionStart = useCallback(() => {
+    console.log('cleear Interval', timeoutId)
+    clearInterval(timeoutId);
     endAnimation();
     isActiveInteractionRef.current = true;
   }, [endAnimation]);
 
   const onInteractionEnd = useCallback(() => {
+
     isActiveInteractionRef.current = false;
-    findSnapTarget();
+
+    const timeoutRegister = setTimeout(() => {
+     findSnapTarget();
+    }, 1000);
+    setTimeoutId(timeoutRegister)
+    console.log('set Interval', timeoutRegister)
+
   }, [findSnapTarget]);
 
   const onInteraction = useCallback(() => {
