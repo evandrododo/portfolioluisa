@@ -67,6 +67,7 @@ export default function Project({
           {video ? (
             <video
               src={video}
+              poster={image}
               autoPlay
               loop
               muted

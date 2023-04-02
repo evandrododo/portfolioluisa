@@ -172,12 +172,12 @@
       }
     }
 
-      .typography {
-        .img-container {
-          flex-direction: row;
-          gap: 1em;
-        }
+    .typography {
+      .img-container {
+        flex-direction: row;
+        gap: 1em;
       }
+    }
   }
 }
 
@@ -247,11 +247,22 @@
   .section {
     display: inline-block;
   }
+
 }
 
 /* Breakpoints */
 
 @media (max-width: 1200px) {
+  .shots .shot {
+    padding: 1em;
+    max-width: 100%;
+    &.cyanotype {
+      .img-container {
+        width: 90%;
+      }
+    }
+  }
+
   #naturaldyeing {
     .container-image {
       justify-content: center !important;
@@ -277,6 +288,12 @@
   #books {
     .container-image {
       flex-direction: column;
+    }
+  }
+
+  #phytotypes.project-detail {
+    .container-image img {
+      max-width: 46%;
     }
   }
 }
@@ -346,9 +363,17 @@
   #videoart.project {
     padding-bottom: 5em;
   }
+  #phytotypes.project-detail {
+    .container-image img {
+      max-width: 100%;
+    }
+  }
+
   #phytotypes.project {
     padding-bottom: 5em;
+
   }
+
   #books.project {
     padding-top: 6em;
     padding-bottom: 1em;
