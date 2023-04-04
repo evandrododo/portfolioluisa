@@ -420,6 +420,12 @@ Exhibited at an art festival called “Art All Night - Trenton: 6th Annual Film 
       display: false,
       color: "magenta"
 
+    },
+    {
+      id: "shots-white",
+      display: false,
+      color: "white"
+
     }
 ];
 

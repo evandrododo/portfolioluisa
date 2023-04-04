@@ -26,7 +26,7 @@ export default function Projects() {
       setProjectHovered('shots')
     } 
     if ((isVulvaVisible && !isShotsTitleVisible) || isDeactiveMarkerVisible) {
-      setProjectHovered(null)
+      setProjectHovered('shots-white')
     }
   }, [isVulvaVisible, isDeactiveMarkerVisible, isShotsTitleVisible])
 
@@ -102,10 +102,7 @@ export default function Projects() {
         >
           <h3 ref={refShots}>Shots</h3>
         </div>
-        <div
-          className="shots-list"
-          style={{ backgroundColor: isShotsTitleVisible ? "magenta" : "white" }}
-        >
+        <div className="shots-list">
           <div className="shot">
             <div>
               <img src="/image28.png" alt="Vulva digital illustration" />
