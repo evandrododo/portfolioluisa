@@ -16,30 +16,98 @@
   img {
     width: 100%;
     max-width: 400px;
-    min-width: 100px;
+    min-width: 300px;
   }
 
   &::after {
     content: "";
     position: absolute;
     right: 0;
-    top: 25%;
+    top: 5%;
     display: block;
     width: 2px;
-    height: 50%;
+    height: 90%;
     background-color: magenta;
     margin: 0 0rem 0 0;
   }
 }
 
-.text {
-  flex: 1 1 0;
-  font-size: 0.8rem;
-  padding: 3rem;
+.sideinfo {
+  padding: 1em 0 1em 3em;
+
+  .text {
+    flex: 1 1 0;
+    font-size: 0.8rem;
+    padding: 0rem;
+  }
+
+  .contact-info {
+    text-align: left;
+    font-weight: 300;
+    padding: 1em 0;
+
+    a {
+      font-weight: 300;
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0.5rem 0;
+
+      svg {
+        margin-right: 0.3rem;
+      }
+    }
+  }
+
+  .socialmedia {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    svg {
+      margin-right: 1.5rem;
+    }
+  }
+
+  .download a {
+    text-decoration: underline;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1em 0 0.5rem 0;
+
+    svg {
+      margin-left: 0.3rem;
+    }
+  }
 
   p {
     width: 100%;
     text-align: left;
+  }
+
+  h2,
+  p {
+    text-align: left;
+    font-size: 2.1em;
+  }
+
+  h2 {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  p {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -78,11 +146,37 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .photo {
+    padding: 2em;
+  }
+  .information {
+  .sideinfo {
+    padding-left: 2em;
+    .text {
+
+      h2,
+      p {
+        font-size: 1.4em;
+      }
+    }
+    .contact-info {
+    font-size: 0.9em; 
+    }
+  }
+  }
+}
+
 @media (max-width: 768px) {
   .information {
+    .sideinfo {
+      padding-left: 0;
+      width: 100%;
+      max-width: 400px;
+    }
     flex-direction: column;
-
     padding: 0;
+
     .photo {
       padding: 0rem 0 0;
 
@@ -90,9 +184,9 @@
         content: "";
         position: absolute;
         top: calc(100% + 1rem);
-        left: 25%;
+        left: 0%;
         display: block;
-        width: 50%;
+        width: 100%;
         height: 2px;
         background-color: magenta;
         margin: 0 0rem 0 0;
@@ -103,15 +197,5 @@
       padding: 2rem 0 0;
     }
 
-  }
-  .contactinfo {
-    padding: 1.5rem 0 2.5rem;
-    font-size: 1rem;
-    .socialmedia svg {
-      width: 1.5rem;
-    }
-    .linkemail {
-      width: 1rem;
-    }
   }
 }

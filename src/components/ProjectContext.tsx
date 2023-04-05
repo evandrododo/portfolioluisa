@@ -232,31 +232,30 @@ const initialProjects: any[] = [
           image: [
             {
               src: "/utilityceramics1.png",
-            }
+            },
           ],
           containerSectionClass: "section margin-bottom",
-        
         },
         {
           containerSectionClass: "section margin-bottom",
-          image:[
+          image: [
             {
               src: "/utilityceramics2.png",
               caption: "Plate, 15 x 15 cm",
-            }
+            },
           ],
           containerImageStyle: {
             textAlign: "center",
-          }
+          },
         },
         {
           containerSectionClass: "section margin-bottom",
-          image:[
+          image: [
             {
               src: "/utilityceramics3.png",
               caption: "Plate, 16 x 10 cm",
-            }
-          ]
+            },
+          ],
         },
       ],
     },
@@ -388,45 +387,35 @@ Exhibited at an art festival called “Art All Night - Trenton: 6th Annual Film 
         {
           title: "Rebeca: It's fun to imagine",
           description: `Writen and illustrated under orientation of Joseane Rücker. In process of publishing by Editora Urutau`,
-          image: ["./rebeca1.gif"]
+          image: ["./rebeca1.gif"],
         },
         {
           title: "The Book of each One's Colours",
           description: "Idealized and handmade by Luisa Kuhn and Joel Nunes",
-          image: ["./books2.gif"]
+          image: ["./books2.gif"],
         },
         {
-          image: [
-            "/books3.png",
-            "/books4.png",
-          ]
+          image: ["/books3.png", "/books4.png"],
         },
         {
-          image: [
-            "/books5.png",
-            "/books6.png",
-          ]
+          image: ["/books5.png", "/books6.png"],
         },
         {
-          image: [
-            "/books7.png",
-          ]
+          image: ["/books7.png"],
         },
       ],
     },
   },
-    {
-      id: "shots",
-      display: false,
-      color: "magenta"
-
-    },
-    {
-      id: "shots-white",
-      display: false,
-      color: "white"
-
-    }
+  {
+    id: "shots",
+    display: false,
+    color: "magenta",
+  },
+  {
+    id: "shots-white",
+    display: false,
+    color: "white",
+  },
 ];
 
 export const ProjectProvider = ({ children }: any) => {
