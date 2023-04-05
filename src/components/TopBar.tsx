@@ -2,11 +2,8 @@ import Filter from "./Filter";
 import PagesMenu from "./PagesMenu";
 import "../styles/TopBar.scss";
 import { ProjectContext } from "./ProjectContext";
-import { useContext, useState } from "react";
-import Menu from "./icons/Menu";
-import { NavLink, ScrollRestoration } from "react-router-dom";
-import LinkIcon from "./icons/LinkIcon";
-import { Close } from "./icons/Close";
+import { useContext, useEffect, useState } from "react";
+import { ScrollRestoration } from "react-router-dom";
 
 export default function TopBar({ changeColor = false }) {
   const [activeMobileMenu, setActiveMobileMenu] = useState(false);

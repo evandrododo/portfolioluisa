@@ -7,6 +7,33 @@ import "../styles/projects.scss";
 import useOnScreen from "../utils";
 
 export default function Projects() {
+
+  useEffect(() => {
+    const links = document.querySelectorAll('a[href^="#/#"]');
+    console.log(links)
+    for (const link of links as any) {
+      link.addEventListener("click", (e: any) => {
+        const href = e.currentTarget.getAttribute("href").slice(2);
+        const element = document.querySelector(href);
+        if(element) {
+          e.preventDefault();
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: href === "#shots" ? "center" : "start",
+          });
+
+          if (href === "#projects") {
+            console.log("########### ACTIVE CEMRAIMCS")
+            setTimeout(() => setProjectHovered("ceramics"), 100);
+          }
+          if (href === "#shots") {
+            setTimeout(() => setProjectHovered("shots"), 100);
+          }
+        }
+      });
+    }
+  });
+  
   const { projectHovered, setProjectHovered, projects, loading } =
     useContext<ProjectsState>(ProjectContext);
   const refShots = useRef<HTMLHeadingElement>(null);
@@ -98,10 +125,11 @@ export default function Projects() {
           );
         })}
       </div>
-      <div className="shots" id="shots">
+      <div className="shots" id="shots-container">
         <div
           className={`shots-title ${isShotsTitleVisible ? "visible" : ""}`}
           ref={refScrollShots}
+          id="shots"
         >
           <h3 ref={refShots}>Shots</h3>
         </div>
