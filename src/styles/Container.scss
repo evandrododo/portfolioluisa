@@ -3,6 +3,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  padding-bottom: 4em;
 }
 
 @media (max-width: 1200px) {
@@ -10,6 +11,7 @@
     max-width: 100%;
     padding: 0 4rem;
 
+  padding-bottom: 4em;
     img {
       max-width: 100%;
     }
@@ -21,5 +23,6 @@
     max-width: 100%;
     padding: 0 2rem;
     
+  padding-bottom: 4em;
   }
 }

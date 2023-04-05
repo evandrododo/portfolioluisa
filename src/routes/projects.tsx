@@ -25,8 +25,11 @@ export default function Projects() {
     if (isShotsTitleVisible) {
       setProjectHovered('shots')
     } 
-    if ((isVulvaVisible && !isShotsTitleVisible) || isDeactiveMarkerVisible) {
+    if (isVulvaVisible && !isShotsTitleVisible) {
       setProjectHovered('shots-white')
+    }
+    if(isDeactiveMarkerVisible) {
+      setProjectHovered('')
     }
   }, [isVulvaVisible, isDeactiveMarkerVisible, isShotsTitleVisible])
 
